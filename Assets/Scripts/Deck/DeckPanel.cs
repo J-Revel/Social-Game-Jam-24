@@ -19,6 +19,8 @@ public class DeckPanel: MonoBehaviour
     private HoverEffect[] hover_effects;
     public float fold_effect_time = 0;
     private List<int> selected_cards = new List<int>();
+    public bool allow_selection;
+    public ProductTag[] selection_filters;
 
 
     private struct HoverEffect

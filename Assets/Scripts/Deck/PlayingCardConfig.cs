@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 public class PlayingCardConfig : ScriptableObject, IPointerEnterHandler, IPointerExitHandler
 {
     public Sprite image;
-    public CardTag[] tags;
+    public ProductTag[] tags;
     public string text;
     private RectTransform rect_transform;
 
