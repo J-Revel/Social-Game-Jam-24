@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cc907d17882521043a16e8acecb6650f, type: 3}
-  m_Name: ClassicShopConfig
+  m_Name: DiscountShopConfig
   m_EditorClassIdentifier: 
   AvailableProducts:
   - product: {fileID: 11400000, guid: 4e2e80c2e8508a64aa3e5009ae3941da, type: 2}
@@ -18,5 +18,5 @@ MonoBehaviour:
     - config: {fileID: 11400000, guid: 283e3b057730dc0449425fb268bd9afa, type: 2}
       probability_weight: 1
     - config: {fileID: 11400000, guid: 70ce934c6f176ad4ba7fd520f24ff9a5, type: 2}
-      probability_weight: 0.5
-  MaxProductCount: 10
+      probability_weight: 0.3
+  MaxProductCount: 1

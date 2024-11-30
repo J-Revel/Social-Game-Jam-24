@@ -6,6 +6,7 @@ public class MapManager : MonoBehaviour
 {
     [SerializeField] private Button openButton;
     [SerializeField] private GameObject mapOverlayPanel;
+    
     public int currentShopIndex = -1;
     public ShopData[] shops;
     public ShopMenu shop_prefab;
