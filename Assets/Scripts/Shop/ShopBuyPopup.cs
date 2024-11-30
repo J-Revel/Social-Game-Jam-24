@@ -6,26 +6,28 @@ public class ShopBuyPopup : MonoBehaviour
 {
     public Image product_icon;
     public DeckPanel deckPanel;
-    public ProductConfig product;
+    public ShopContentElement product;
     public TMP_Text price_display;
     public Button confirm_button;
     public Button cancel_button;
     public System.Action popup_close_delegate;
 
+    int price { get { return Mathf.RoundToInt(product.product.cost * product.promo.price_multiplier * deckPanel.selected_price_multiplier); } }
+            
     void Start()
     {
-        product_icon.sprite = product.icon;
+        product_icon.sprite = product.product.icon;
         confirm_button.onClick.AddListener(() =>
         {
             popup_close_delegate?.Invoke();
             Destroy(gameObject);
-            int price_cents = Mathf.RoundToInt(product.cost * deckPanel.selected_price_multiplier);
             deckPanel.ConsumeSelectedCards();
             TransactionManager.RegisterTransaction(new TransactionEventData
             {
-                PriceCost = price_cents,
-                Product = product,
+                PriceCost = price,
+                Product = product.product,
             });
+
         });
         cancel_button.onClick.AddListener(() => {
             popup_close_delegate?.Invoke();
@@ -35,7 +37,6 @@ public class ShopBuyPopup : MonoBehaviour
 
     void Update()
     {
-        int price_cents = Mathf.RoundToInt(product.cost * deckPanel.selected_price_multiplier);
-        price_display.text = (price_cents / 100).ToString() + "," + (price_cents % 100).ToString("00");
+        price_display.text = (price / 100).ToString() + "," + (price % 100).ToString("00");
     }
 }

@@ -19,20 +19,17 @@ public class MapManager : MonoBehaviour
 
     public void GoToShop(int shopIndex)
     {
-        if(currentShopIndex != shopIndex)
-        {
-            if(currentShopIndex != -1)
-            {
-                // Hide last shop
-                if (displayed_shop != null)
-                    Destroy(displayed_shop);
-            }
+        // Activate next shop
+        currentShopIndex = shopIndex;
+        displayed_shop = Instantiate(shop_prefab, shop_menu_container);
+        displayed_shop.products = Global.CurrentShopList[currentShopIndex];
+    }
 
-            // Activate next shop
-            currentShopIndex = shopIndex;
-            displayed_shop = Instantiate(shop_prefab, shop_menu_container);
-            displayed_shop.products = Global.CurrentShopList[currentShopIndex];
-        }
+    public void ExitShop()
+    {
+        if (displayed_shop != null)
+            Destroy(displayed_shop.gameObject);
+
     }
 }
 

@@ -22,12 +22,15 @@ public class DeckPanel : MonoBehaviour, IPointerExitHandler
     public bool allow_selection;
     public ProductTag[] selected_product_tags;
     public Vector2 hover_additional_offset;
+    public float appear_speed = 3;
+    public Vector2 appear_offset = new Vector2(100, -100);
 
 
     public class HoverEffect
     {
         public float value;
         public float target_value;
+        public float appear_value;
     }
 
     void Start()
@@ -35,54 +38,7 @@ public class DeckPanel : MonoBehaviour, IPointerExitHandler
         int cursor = 0;
         foreach (PlayingCardConfig deck_element in deck)
         {
-            PlayingCardElement playing_card = Instantiate(playing_card_prefab, transform);
-            playing_card.config = deck_element;
-            playing_cards.Add(playing_card);
-            int card_index = cursor;
-            HoverEffect effect = new HoverEffect { };
-            playing_card.hover_effect = effect;
-            hover_effects.Add(effect);
-            playing_card.hover_start_delegate += () =>
-            {
-                if (hovered_card >= 0)
-                    hover_effects[hovered_card].target_value = 0;
-                for (int i = 0; i < playing_cards.Count; i++)
-                    if (playing_cards[i] == playing_card)
-                        hovered_card = i;
-                effect.target_value = 1;
-            };
-            playing_card.hover_end_delegate += () =>
-            {
-                //hover_effects[card_index].target_value = 0;
-            };
-            playing_card.clicked_delegate += () =>
-            {
-                if (allow_selection)
-                {
-                    bool tags_compatible = true;
-                    foreach (var tag_filter in playing_card.config.tag_filters)
-                    {
-                        if (!tag_filter.IsCompatibleWithTags(selected_product_tags))
-                        {
-                            tags_compatible = false;
-                        }
-                    }
-                    if (tags_compatible)
-                    {
-                        if (selected_cards.Contains(playing_card))
-                        {
-                            selected_cards.Remove(playing_card);
-                            playing_card.SetStateDefault();
-                        }
-                        else
-                        {
-                            selected_cards.Add(playing_card);
-                            playing_card.SetStateSelected();
-                        }
-                    }
-                }
-            };
-            cursor++;
+            AddCard(deck_element);
         }
     }
 
@@ -106,6 +62,7 @@ public class DeckPanel : MonoBehaviour, IPointerExitHandler
                 hover_effect.value = hover_effect.target_value;
             }
             else hover_effect.value += Mathf.Sign(offset) * Time.deltaTime * hover_cursor_anim_speed;
+            hover_effect.appear_value = Mathf.Clamp01(hover_effect.appear_value + appear_speed * Time.deltaTime);
             hover_effects[i] = hover_effect;
 
             weight_sum += hover_effect.value;
@@ -113,6 +70,8 @@ public class DeckPanel : MonoBehaviour, IPointerExitHandler
         if (folded)
             fold_effect_time -= Time.deltaTime;
         else fold_effect_time += Time.deltaTime;
+
+        
         fold_effect_time = Mathf.Clamp(fold_effect_time, 0, fold_effect_duration);
         float fold_effect_ratio = fold_effect_time / fold_effect_duration;
         float cursor = 0;
@@ -134,9 +93,59 @@ public class DeckPanel : MonoBehaviour, IPointerExitHandler
             {
                 value = hover_effects[i].value / weight_sum * fold_effect_ratio;
             }
-            playing_cards[i].rect_transform.anchoredPosition = new Vector2(cursor - used_width / 2, 0) + hover_effects[i].value * hover_additional_offset;
+            playing_cards[i].rect_transform.anchoredPosition = appear_offset * (1-hover_effects[i].appear_value) + new Vector2(cursor - used_width / 2, 0) + hover_effects[i].value * hover_additional_offset;
             cursor += Mathf.Lerp(default_spacing, hover_spacing, value);
         }
+    }
+
+    public void AddCard(PlayingCardConfig card)
+    {
+        PlayingCardElement playing_card = Instantiate(playing_card_prefab, transform);
+        playing_card.config = card;
+        playing_cards.Add(playing_card);
+        HoverEffect effect = new HoverEffect { };
+        playing_card.hover_effect = effect;
+        hover_effects.Add(effect);
+        playing_card.hover_start_delegate += () =>
+        {
+            if (hovered_card >= 0)
+                hover_effects[hovered_card].target_value = 0;
+            for (int i = 0; i < playing_cards.Count; i++)
+                if (playing_cards[i] == playing_card)
+                    hovered_card = i;
+            effect.target_value = 1;
+        };
+        playing_card.hover_end_delegate += () =>
+        {
+            //hover_effects[card_index].target_value = 0;
+        };
+        playing_card.clicked_delegate += () =>
+        {
+            if (allow_selection)
+            {
+                bool tags_compatible = true;
+                foreach (var tag_filter in playing_card.config.tag_filters)
+                {
+                    if (!tag_filter.IsCompatibleWithTags(selected_product_tags))
+                    {
+                        tags_compatible = false;
+                    }
+                }
+                if (tags_compatible)
+                {
+                    if (selected_cards.Contains(playing_card))
+                    {
+                        selected_cards.Remove(playing_card);
+                        playing_card.SetStateDefault();
+                    }
+                    else
+                    {
+                        selected_cards.Add(playing_card);
+                        playing_card.SetStateSelected();
+                    }
+                }
+            }
+        };
     }
 
     public void StartCardSelection(ProductTag[] product_tags)

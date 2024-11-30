@@ -45,11 +45,34 @@ public class Global : MonoBehaviour
         {
             ShopConfig shopConfig = this.shopConfigs[i];
             currentShopList[i] = new ShopContentData();
-            currentShopList[i].Products = new ProductConfig[shopConfig.MaxProductCount];
+            currentShopList[i].Products = new ShopContentElement[shopConfig.MaxProductCount];
             for (int p = 0; p < shopConfig.MaxProductCount; p++)
             {
-                int productPickIndex = p % shopConfig.AvaillableProducts.Length; // TODO pick randomly or with some game rules
-                currentShopList[i].Products[p] = shopConfig.AvaillableProducts[productPickIndex];
+                int productPickIndex = Random.Range(0, shopConfig.AvailableProducts.Length);
+                ShopProductConfig product = shopConfig.AvailableProducts[productPickIndex];
+                //product.product
+                float promo_random_value = Random.Range(0, 1.0f);
+                float promo_weight_sum = 0;
+                for(int j=0; j<product.promos.Length; j++)
+                {
+                    promo_weight_sum += product.promos[j].probability_weight;
+                }
+                int promo_index = 0;
+                for(int j=0; j<product.promos.Length; j++)
+                {
+                    promo_random_value -= product.promos[j].probability_weight / promo_weight_sum;
+                    if (promo_random_value < 0.0f)
+                    {
+                        promo_index = j;
+                        break;
+                    }
+                }
+                currentShopList[i].Products[p] = new ShopContentElement
+                {
+                    product = product.product,
+                    promo = product.promos[promo_index].config,
+                };
+
             }
         }
 

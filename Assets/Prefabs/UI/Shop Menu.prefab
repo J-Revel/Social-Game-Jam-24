@@ -269,13 +269,15 @@ MonoBehaviour:
   hover_spacing: 250
   hovered_card_anim_cursor: 0
   hovered_card: 0
-  hovered_anim_duration: 0.3
+  hovered_anim_duration: 0.5
   hover_cursor_anim_speed: 3.333333
   fold_effect_duration: 0.3
   fold_effect_time: 0
   allow_selection: 0
   selected_product_tags: []
   hover_additional_offset: {x: 120, y: 120}
+  appear_speed: 3
+  appear_offset: {x: 100, y: -100}
 --- !u!114 &4438151390436256439
 MonoBehaviour:
   m_ObjectHideFlags: 0
