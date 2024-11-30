@@ -8,7 +8,7 @@ public class DeckPanel : MonoBehaviour, IPointerExitHandler
 {
     public PlayingCardConfig[] deck;
     public PlayingCardElement playing_card_prefab;
-    private PlayingCardElement[] playing_cards;
+    private List<PlayingCardElement> playing_cards = new List<PlayingCardElement>();
     public float default_spacing = 40;
     public float hover_spacing = 130;
     public float hovered_card_anim_cursor = -1;
@@ -16,7 +16,7 @@ public class DeckPanel : MonoBehaviour, IPointerExitHandler
     public float hovered_anim_duration = 0.3f;
     public float hover_cursor_anim_speed = 3;
     public float fold_effect_duration = 0.3f;
-    private HoverEffect[] hover_effects;
+    private List<HoverEffect> hover_effects = new List<HoverEffect>();
     public float fold_effect_time = 0;
     private List<int> selected_cards = new List<int>();
     public bool allow_selection;
@@ -24,23 +24,21 @@ public class DeckPanel : MonoBehaviour, IPointerExitHandler
     public Vector2 hover_additional_offset;
 
 
-    private struct HoverEffect
+    private class HoverEffect
     {
-        public int index;
         public float value;
         public float target_value;
     }
 
     void Start()
     {
-        playing_cards = new PlayingCardElement[deck.Length];
-        hover_effects = new HoverEffect[deck.Length];
         int cursor = 0;
         foreach (PlayingCardConfig deck_element in deck)
         {
             PlayingCardElement playing_card = Instantiate(playing_card_prefab, transform);
             playing_card.config = deck_element;
-            playing_cards[cursor] = playing_card;
+            playing_cards.Add(playing_card);
+            hover_effects.Add(new HoverEffect { });
             int card_index = cursor;
             playing_card.hover_start_delegate += () =>
             {
@@ -94,7 +92,7 @@ public class DeckPanel : MonoBehaviour, IPointerExitHandler
             hovered_card_anim_cursor = hovered_card;
         float weight_sum = 0;
         bool folded = true;
-        for (int i = 0; i < hover_effects.Length; i++)
+        for (int i = 0; i < hover_effects.Count; i++)
         {
             var hover_effect = hover_effects[i];
             float offset = hover_effect.target_value - hover_effect.value;
@@ -115,7 +113,7 @@ public class DeckPanel : MonoBehaviour, IPointerExitHandler
         fold_effect_time = Mathf.Clamp(fold_effect_time, 0, fold_effect_duration);
         float fold_effect_ratio = fold_effect_time / fold_effect_duration;
         float cursor = 0;
-        for (int i = 0; i < playing_cards.Length; i++)
+        for (int i = 0; i < playing_cards.Count; i++)
         {
             float value = 0;
             if (weight_sum > 0)
@@ -126,7 +124,7 @@ public class DeckPanel : MonoBehaviour, IPointerExitHandler
         }
         float used_width = cursor;
         cursor = 0;
-        for (int i = 0; i < playing_cards.Length; i++)
+        for (int i = 0; i < playing_cards.Count; i++)
         {
             float value = 0;
             if (weight_sum > 0)
@@ -157,6 +155,38 @@ public class DeckPanel : MonoBehaviour, IPointerExitHandler
             else card.SetStateDisabled();
             
         }
+    }
+    public void StopCardSelection()
+    {
+        allow_selection = true;
+        foreach(var card in playing_cards)
+        {
+            card.SetStateDefault();
+        }
+    }
+
+    public void ConsumeSelectedCards()
+    {
+        selected_cards.Sort();
+        for(int i=0; i<selected_cards.Count; i++)
+        {
+            int selected_index = selected_cards[i];
+            Destroy(playing_cards[selected_index].gameObject);
+            playing_cards.RemoveAt(selected_index);
+            hover_effects.RemoveAt(selected_index);
+        }
+        selected_cards.Clear();
+    }
+
+    public float selected_price_multiplier { get
+        {
+            float result = 1;
+            foreach(int card_index in selected_cards)
+            {
+                result *= playing_cards[card_index].config.price_multiplier;
+            }
+            return result;
+        } 
     }
 
     public void OnPointerExit(PointerEventData eventData)

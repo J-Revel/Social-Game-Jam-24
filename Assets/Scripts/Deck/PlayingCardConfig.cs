@@ -16,6 +16,8 @@ public class PlayingCardConfig : ScriptableObject, IPointerEnterHandler, IPointe
     private bool hovered;
     private float hovered_anim_time;
 
+    public float price_multiplier = 0.5f;
+
     public void OnPointerEnter(PointerEventData eventData)
     {
         hovered = true;

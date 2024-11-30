@@ -3,8 +3,8 @@ using UnityEngine;
 
 public struct TransactionEventData
 {
-    public List<ScriptableObject> tags;
-    public List<AlimentDescription> TransactionDescription;
+    public ProductConfig Product;
+    public AlimentDescription[] TransactionDescription { get { return Product.aliments; } }
     public int TimeCost;
     public int PriceCost;
 }

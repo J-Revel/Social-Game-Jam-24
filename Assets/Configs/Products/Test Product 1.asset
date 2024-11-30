@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Test Product 1
   m_EditorClassIdentifier: 
   title: 
-  cost: 0
+  cost: 1000
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: c374eca590863c544be087b8d61e6714, type: 3}
   tags:
   - {fileID: 11400000, guid: b8f94d001e5612941968991080caed44, type: 2}
   - {fileID: 11400000, guid: fb8b31036ca710d4498c89bce5fc8f73, type: 2}
+  - {fileID: 11400000, guid: 734b74cfbc315b349998c38a23125e48, type: 2}
   aliments: []
