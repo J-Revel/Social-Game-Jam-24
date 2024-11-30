@@ -8,6 +8,9 @@ public class MapManager : MonoBehaviour
     [SerializeField] private GameObject mapOverlayPanel;
     public int currentShopIndex = -1;
     public ShopData[] shops;
+    public ShopMenu shop_prefab;
+    private ShopMenu displayed_shop;
+    public Transform shop_menu_container;
 
     public void ToggleMap()
     {
@@ -21,12 +24,14 @@ public class MapManager : MonoBehaviour
             if(currentShopIndex != -1)
             {
                 // Hide last shop
-                shops[currentShopIndex].Shop.SetActive(false);
+                if (displayed_shop != null)
+                    Destroy(displayed_shop);
             }
 
             // Activate next shop
             currentShopIndex = shopIndex;
-            shops[currentShopIndex].Shop.SetActive(true);
+            displayed_shop = Instantiate(shop_prefab, shop_menu_container);
+            displayed_shop.products = Global.CurrentShopList[currentShopIndex];
         }
     }
 }

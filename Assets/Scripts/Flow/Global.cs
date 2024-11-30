@@ -45,10 +45,11 @@ public class Global : MonoBehaviour
         {
             ShopConfig shopConfig = this.shopConfigs[i];
             currentShopList[i] = new ShopContentData();
+            currentShopList[i].Products = new ProductConfig[shopConfig.MaxProductCount];
             for (int p = 0; p < shopConfig.MaxProductCount; p++)
             {
                 int productPickIndex = p % shopConfig.AvaillableProducts.Length; // TODO pick randomly or with some game rules
-                currentShopList[i].Products.Add(shopConfig.AvaillableProducts[productPickIndex]);
+                currentShopList[i].Products[p] = shopConfig.AvaillableProducts[productPickIndex];
             }
         }
 

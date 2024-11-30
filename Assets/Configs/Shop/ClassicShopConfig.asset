@@ -14,4 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AvaillableProducts:
   - {fileID: 11400000, guid: a07618b370faa5f4aa403688868fa56f, type: 2}
-  MaxProductCount: 16
+  - {fileID: 11400000, guid: 4e2e80c2e8508a64aa3e5009ae3941da, type: 2}
+  - {fileID: 11400000, guid: f14a30d55ead5884e95f85c2766d6ab5, type: 2}
+  MaxProductCount: 10
