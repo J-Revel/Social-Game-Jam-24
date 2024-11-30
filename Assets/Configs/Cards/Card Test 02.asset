@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b4ef533d0ea601545bb8553bee21eb89, type: 3}
-  m_Name: Card Test 01
+  m_Name: Card Test 02
   m_EditorClassIdentifier: 
   image: {fileID: 0}
   tag_filters:
-  - filter_type: 0
-    tag: {fileID: 11400000, guid: b8f94d001e5612941968991080caed44, type: 2}
+  - filter_type: 1
+    tag: {fileID: 11400000, guid: fb8b31036ca710d4498c89bce5fc8f73, type: 2}
   text: 
   default_size: 0
   hovered_size: 0

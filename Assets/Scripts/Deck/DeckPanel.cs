@@ -2,8 +2,9 @@ using JetBrains.Annotations;
 using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class DeckPanel: MonoBehaviour
+public class DeckPanel : MonoBehaviour, IPointerExitHandler
 {
     public PlayingCardConfig[] deck;
     public PlayingCardElement playing_card_prefab;
@@ -12,7 +13,6 @@ public class DeckPanel: MonoBehaviour
     public float hover_spacing = 130;
     public float hovered_card_anim_cursor = -1;
     public int hovered_card = -1;
-    private float hovered_anim_time = 0;
     public float hovered_anim_duration = 0.3f;
     public float hover_cursor_anim_speed = 3;
     public float fold_effect_duration = 0.3f;
@@ -20,7 +20,8 @@ public class DeckPanel: MonoBehaviour
     public float fold_effect_time = 0;
     private List<int> selected_cards = new List<int>();
     public bool allow_selection;
-    public ProductTag[] selection_filters;
+    public ProductTag[] selected_product_tags;
+    public Vector2 hover_additional_offset;
 
 
     private struct HoverEffect
@@ -35,7 +36,7 @@ public class DeckPanel: MonoBehaviour
         playing_cards = new PlayingCardElement[deck.Length];
         hover_effects = new HoverEffect[deck.Length];
         int cursor = 0;
-        foreach(PlayingCardConfig deck_element in deck)
+        foreach (PlayingCardConfig deck_element in deck)
         {
             PlayingCardElement playing_card = Instantiate(playing_card_prefab, transform);
             playing_card.config = deck_element;
@@ -43,23 +44,41 @@ public class DeckPanel: MonoBehaviour
             int card_index = cursor;
             playing_card.hover_start_delegate += () =>
             {
+                if (hovered_card >= 0)
+                    hover_effects[hovered_card].target_value = 0;
+                hovered_card = card_index;
                 hover_effects[card_index].target_value = 1;
             };
             playing_card.hover_end_delegate += () =>
             {
-                hover_effects[card_index].target_value = 0;
+                //hover_effects[card_index].target_value = 0;
             };
             playing_card.clicked_delegate += () =>
             {
-                if(selected_cards.Contains(card_index))
+                if (allow_selection)
                 {
-                    selected_cards.Remove(card_index);
-                    playing_cards[card_index].SetSelected(false);
-                }
-                else
-                {
-                    selected_cards.Add(card_index);
-                    playing_cards[card_index].SetSelected(true);
+                    bool tags_compatible = true;
+                    foreach (var tag_filter in playing_card.config.tag_filters)
+                    {
+                        if (!tag_filter.IsCompatibleWithTags(selected_product_tags))
+                        {
+                            tags_compatible = false;
+                        }
+                    }
+                    if (tags_compatible)
+                    {
+                        if (selected_cards.Contains(card_index))
+                        {
+                            selected_cards.Remove(card_index);
+                            playing_cards[card_index].SetStateDefault();
+                        }
+                        else
+                        {
+                            selected_cards.Add(card_index);
+                            playing_cards[card_index].SetStateSelected();
+                        }
+                    }
+
                 }
             };
             cursor++;
@@ -73,10 +92,9 @@ public class DeckPanel: MonoBehaviour
             hovered_card_anim_cursor += target_direction * hover_cursor_anim_speed * Time.deltaTime;
         else
             hovered_card_anim_cursor = hovered_card;
-        float cursor = 0;
         float weight_sum = 0;
         bool folded = true;
-        for(int i=0; i<hover_effects.Length; i++)
+        for (int i = 0; i < hover_effects.Length; i++)
         {
             var hover_effect = hover_effects[i];
             float offset = hover_effect.target_value - hover_effect.value;
@@ -96,15 +114,57 @@ public class DeckPanel: MonoBehaviour
         else fold_effect_time += Time.deltaTime;
         fold_effect_time = Mathf.Clamp(fold_effect_time, 0, fold_effect_duration);
         float fold_effect_ratio = fold_effect_time / fold_effect_duration;
-        for(int i=0; i<playing_cards.Length; i++)
+        float cursor = 0;
+        for (int i = 0; i < playing_cards.Length; i++)
         {
             float value = 0;
-            if(weight_sum > 0)
+            if (weight_sum > 0)
             {
                 value = hover_effects[i].value / weight_sum * fold_effect_ratio;
             }
-            playing_cards[i].rect_transform.anchoredPosition = new Vector2(cursor - playing_cards.Length * default_spacing / 2, 0);
             cursor += Mathf.Lerp(default_spacing, hover_spacing, value);
+        }
+        float used_width = cursor;
+        cursor = 0;
+        for (int i = 0; i < playing_cards.Length; i++)
+        {
+            float value = 0;
+            if (weight_sum > 0)
+            {
+                value = hover_effects[i].value / weight_sum * fold_effect_ratio;
+            }
+            playing_cards[i].rect_transform.anchoredPosition = new Vector2(cursor - used_width / 2, 0) + hover_effects[i].value * hover_additional_offset;
+            cursor += Mathf.Lerp(default_spacing, hover_spacing, value);
+        }
+    }
+
+    public void StartCardSelection(ProductTag[] product_tags)
+    {
+        allow_selection = true;
+        selected_product_tags = product_tags;
+        foreach(var card in playing_cards)
+        {
+            bool tags_compatible = true;
+            foreach (var tag_filter in card.config.tag_filters)
+            {
+                if (!tag_filter.IsCompatibleWithTags(selected_product_tags))
+                {
+                    tags_compatible = false;
+                }
+            }
+            if (tags_compatible)
+                card.SetStateDefault();
+            else card.SetStateDisabled();
+            
+        }
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if(hovered_card >= 0)
+        {
+            hover_effects[hovered_card].target_value = 0;
+            hovered_card = 0;
         }
     }
 }

@@ -13,6 +13,7 @@ public class PlayingCardElement : MonoBehaviour, IPointerEnterHandler, IPointerE
     public Image background_image;
     public Color default_background_color = Color.white;
     public Color selected_background_color = Color.red;
+    public Color disabled_background_color = Color.gray;
 
     public RectTransform rect_transform { get; private set; }
 
@@ -32,11 +33,20 @@ public class PlayingCardElement : MonoBehaviour, IPointerEnterHandler, IPointerE
         hover_end_delegate?.Invoke();
     }
 
-    public void SetSelected(bool selected)
+    public void SetStateSelected()
     {
-        background_image.color = selected ? selected_background_color : default_background_color;
+        background_image.color = selected_background_color;
     }
 
+    public void SetStateDefault()
+    {
+        background_image.color = default_background_color;
+    }
+
+    public void SetStateDisabled()
+    {
+        background_image.color = disabled_background_color;
+    }
 
     public void Update()
     {
