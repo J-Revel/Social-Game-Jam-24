@@ -15,10 +15,6 @@ public enum AlimentType
     /// </summary>
     Protein,
     /// <summary>
-    /// Milk, Cheese...
-    /// </summary>
-    Dairy,
-    /// <summary>
     /// Lolipops, Chips...
     /// </summary>
     Snacks,

@@ -1,10 +1,8 @@
-using UnityEngine;
+using System;
 
-[CreateAssetMenu(fileName = "AlimentDescription", menuName = "ScriptableObjects/AlimentDescription")]
-public class AlimentDescription : ScriptableObject
+[Serializable]
+public struct AlimentDescription
 {
-    public ShopType ShopType;
-    public string Name;
     public AlimentType Type;
     public int Amount;
 }
