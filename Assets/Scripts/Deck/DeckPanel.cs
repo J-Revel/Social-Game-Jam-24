@@ -18,13 +18,13 @@ public class DeckPanel : MonoBehaviour, IPointerExitHandler
     public float fold_effect_duration = 0.3f;
     private List<HoverEffect> hover_effects = new List<HoverEffect>();
     public float fold_effect_time = 0;
-    private List<int> selected_cards = new List<int>();
+    private List<PlayingCardElement> selected_cards = new List<PlayingCardElement>();
     public bool allow_selection;
     public ProductTag[] selected_product_tags;
     public Vector2 hover_additional_offset;
 
 
-    private class HoverEffect
+    public class HoverEffect
     {
         public float value;
         public float target_value;
@@ -40,6 +40,7 @@ public class DeckPanel : MonoBehaviour, IPointerExitHandler
             playing_cards.Add(playing_card);
             int card_index = cursor;
             HoverEffect effect = new HoverEffect { };
+            playing_card.hover_effect = effect;
             hover_effects.Add(effect);
             playing_card.hover_start_delegate += () =>
             {
@@ -68,14 +69,14 @@ public class DeckPanel : MonoBehaviour, IPointerExitHandler
                     }
                     if (tags_compatible)
                     {
-                        if (selected_cards.Contains(card_index))
+                        if (selected_cards.Contains(playing_card))
                         {
-                            selected_cards.Remove(card_index);
+                            selected_cards.Remove(playing_card);
                             playing_card.SetStateDefault();
                         }
                         else
                         {
-                            selected_cards.Add(card_index);
+                            selected_cards.Add(playing_card);
                             playing_card.SetStateSelected();
                         }
                     }
@@ -169,13 +170,11 @@ public class DeckPanel : MonoBehaviour, IPointerExitHandler
 
     public void ConsumeSelectedCards()
     {
-        selected_cards.Sort();
         for(int i=selected_cards.Count-1; i>=0; i--)
         {
-            int selected_index = selected_cards[i];
-            Destroy(playing_cards[selected_index].gameObject);
-            playing_cards.RemoveAt(selected_index);
-            hover_effects.RemoveAt(selected_index);
+            Destroy(selected_cards[i].gameObject);
+            playing_cards.Remove(selected_cards[i]);
+            hover_effects.Remove(selected_cards[i].hover_effect);
         }
         selected_cards.Clear();
     }
@@ -183,9 +182,9 @@ public class DeckPanel : MonoBehaviour, IPointerExitHandler
     public float selected_price_multiplier { get
         {
             float result = 1;
-            foreach(int card_index in selected_cards)
+            foreach(PlayingCardElement card in selected_cards)
             {
-                result *= playing_cards[card_index].config.price_multiplier;
+                result *= card.config.price_multiplier;
             }
             return result;
         } 

@@ -15,6 +15,7 @@ public class PlayingCardElement : MonoBehaviour, IPointerEnterHandler, IPointerE
     public Color default_background_color = Color.white;
     public Color selected_background_color = Color.red;
     public Color disabled_background_color = Color.gray;
+    public DeckPanel.HoverEffect hover_effect;
 
     public RectTransform rect_transform { get; private set; }
 
