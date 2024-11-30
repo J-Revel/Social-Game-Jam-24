@@ -18,7 +18,7 @@ public class TransactionManager : MonoBehaviour
     private void AddTransactionToHistoric(TransactionEventData data)
     {
         transactions.Add(data);
-        moneyBag.PayForTransaction(data);
-        alimentBag.AddFromTransaction(data);
+        moneyBag?.PayForTransaction(data);
+        alimentBag?.AddFromTransaction(data);
     }
 }

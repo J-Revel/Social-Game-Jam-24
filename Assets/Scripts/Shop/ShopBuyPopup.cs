@@ -14,6 +14,7 @@ public class ShopBuyPopup : MonoBehaviour
 
     void Start()
     {
+        product_icon.sprite = product.icon;
         confirm_button.onClick.AddListener(() =>
         {
             popup_close_delegate?.Invoke();
@@ -25,7 +26,6 @@ public class ShopBuyPopup : MonoBehaviour
                 PriceCost = price_cents,
                 Product = product,
             });
-            product_icon.sprite = product.icon;
         });
         cancel_button.onClick.AddListener(() => {
             popup_close_delegate?.Invoke();

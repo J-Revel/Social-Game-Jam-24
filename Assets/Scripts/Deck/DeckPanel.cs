@@ -38,14 +38,17 @@ public class DeckPanel : MonoBehaviour, IPointerExitHandler
             PlayingCardElement playing_card = Instantiate(playing_card_prefab, transform);
             playing_card.config = deck_element;
             playing_cards.Add(playing_card);
-            hover_effects.Add(new HoverEffect { });
             int card_index = cursor;
+            HoverEffect effect = new HoverEffect { };
+            hover_effects.Add(effect);
             playing_card.hover_start_delegate += () =>
             {
                 if (hovered_card >= 0)
                     hover_effects[hovered_card].target_value = 0;
-                hovered_card = card_index;
-                hover_effects[card_index].target_value = 1;
+                for (int i = 0; i < playing_cards.Count; i++)
+                    if (playing_cards[i] == playing_card)
+                        hovered_card = i;
+                effect.target_value = 1;
             };
             playing_card.hover_end_delegate += () =>
             {
@@ -68,15 +71,14 @@ public class DeckPanel : MonoBehaviour, IPointerExitHandler
                         if (selected_cards.Contains(card_index))
                         {
                             selected_cards.Remove(card_index);
-                            playing_cards[card_index].SetStateDefault();
+                            playing_card.SetStateDefault();
                         }
                         else
                         {
                             selected_cards.Add(card_index);
-                            playing_cards[card_index].SetStateSelected();
+                            playing_card.SetStateSelected();
                         }
                     }
-
                 }
             };
             cursor++;
@@ -158,7 +160,7 @@ public class DeckPanel : MonoBehaviour, IPointerExitHandler
     }
     public void StopCardSelection()
     {
-        allow_selection = true;
+        allow_selection = false;
         foreach(var card in playing_cards)
         {
             card.SetStateDefault();
@@ -168,7 +170,7 @@ public class DeckPanel : MonoBehaviour, IPointerExitHandler
     public void ConsumeSelectedCards()
     {
         selected_cards.Sort();
-        for(int i=0; i<selected_cards.Count; i++)
+        for(int i=selected_cards.Count-1; i>=0; i--)
         {
             int selected_index = selected_cards[i];
             Destroy(playing_cards[selected_index].gameObject);
