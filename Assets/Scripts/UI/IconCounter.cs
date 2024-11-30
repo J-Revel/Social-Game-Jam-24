@@ -1,10 +1,9 @@
-using System;
 using System.Collections;
-using Microsoft.Unity.VisualStudio.Editor;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class AlimentCounter : MonoBehaviour
+public class IconCounter : MonoBehaviour
 {
     [SerializeField] AnimationConfig animationConfig;
     [SerializeField] Image icon;
