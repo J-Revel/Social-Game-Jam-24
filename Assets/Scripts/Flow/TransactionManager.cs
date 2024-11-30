@@ -5,7 +5,7 @@ using UnityEngine.Scripting;
 
 public class TransactionManager : MonoBehaviour
 {
-    private static TransactionManager singleton;
+    public static TransactionManager singleton { get; private set;}
     [SerializeField] public MoneyBag moneyBag;
     [SerializeField] public AlimentBag alimentBag;
     public static void RegisterTransaction(TransactionEventData data)
