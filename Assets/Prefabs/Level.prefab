@@ -1078,13 +1078,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dataDictionnary:
-  - Type: 2
+  - Type: 0
     Counter: {fileID: 2312002798607832499}
     Amount: 0
   - Type: 1
     Counter: {fileID: 2125169459455055168}
     Amount: 0
-  - Type: 0
+  - Type: 2
     Counter: {fileID: 3603383203056373707}
     Amount: 0
   - Type: 3
