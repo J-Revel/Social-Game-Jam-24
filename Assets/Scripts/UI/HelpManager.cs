@@ -1,37 +1,27 @@
 using System;
-using System.Collections.Generic;
+using UnityEditor.Localization.Plugins.XLIFF.V20;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class HelpManager : MonoBehaviour
 {
-    [SerializeField] private Button openButton;
+    public static HelpManager singleton;
     [SerializeField] private Button confirmationButton;
     [SerializeField] private Image explanationOverlayImage;
-    [SerializeField] private List<HelpData> helpDataList;
+    [SerializeField] private HelpData[] shopHelpDataList;
+    [SerializeField] private HelpData mapHelpData;
 
     public bool IsDisplayingHelp => explanationOverlayImage.IsActive();
+    private int currentWatchedIndex = -1;
 
-    private void Update()
+    void Awake()
     {
-        if(IsDisplayingHelp)
-        {
-            return;
-        }
-
-        HelpData dataToActivate = SearchData(data => !data.HasBeenDisplayed && data.TriggerObject.activeSelf);
-        if(dataToActivate!=null)
-        {
-            DisplayHelp(dataToActivate);
-        }
+        singleton = this;
     }
-
-    public void DisplayHelp() => DisplayHelp(SearchData(data => data.TriggerObject.activeSelf));
 
     public void HideHelp()
     {
         explanationOverlayImage.enabled = false;
-        openButton.gameObject.SetActive(true);
         confirmationButton.gameObject.SetActive(false);
     }
 
@@ -40,24 +30,53 @@ public class HelpManager : MonoBehaviour
         data.HasBeenDisplayed = true;
         explanationOverlayImage.enabled = true;
         explanationOverlayImage.sprite = data.ExplaningSprite;
-        openButton.gameObject.SetActive(false);
         confirmationButton.gameObject.SetActive(true);
     }
 
-    private HelpData? SearchData(Func<HelpData, bool> filter)
+    public static void DisplayHelp() => singleton.DisplayHelp(singleton.GetCurrentHelpData());
+
+    public static void OnShopOpen(int shopIndex)
     {
-        foreach(HelpData data in helpDataList)
-        {
-            if(filter(data)){return data;}
-        }
-        return null;
+        singleton.currentWatchedIndex = shopIndex;
+        singleton.TryDisplayHelp();
     }
+
+    public static void OnMapOpen()
+    {
+        singleton.currentWatchedIndex = -1;
+        singleton.TryDisplayHelp();
+    }
+
+    public static void Reset()
+    {
+        foreach(HelpData data in singleton.shopHelpDataList) data.HasBeenDisplayed = false;
+        singleton.mapHelpData.HasBeenDisplayed = false;
+    }
+
+    private void TryDisplayHelp()
+    {
+        HelpData dataToActivate = GetCurrentHelpData();
+        if (!dataToActivate.HasBeenDisplayed)
+        {
+            DisplayHelp(dataToActivate);
+        }
+    }
+
+    private HelpData GetCurrentHelpData()
+    {
+        return currentWatchedIndex switch
+        {
+            -1 => mapHelpData,
+            _ => shopHelpDataList[currentWatchedIndex],
+        };
+    }
+
+    
 }
 
 [Serializable]
 public class HelpData
 {
     public bool HasBeenDisplayed = false;
-    public GameObject TriggerObject;
     public Sprite ExplaningSprite;
 }

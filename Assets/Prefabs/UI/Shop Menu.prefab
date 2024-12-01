@@ -96,7 +96,7 @@ MonoBehaviour:
   m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 260, y: 177}
+  m_CellSize: {x: 290, y: 193}
   m_Spacing: {x: 10, y: 10}
   m_Constraint: 1
   m_ConstraintCount: 5
@@ -280,7 +280,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 148811c7cd3852948abafc1f87d6275a, type: 2}
   - {fileID: 11400000, guid: c381c145f7af264449c0f363eaa1803d, type: 2}
   - {fileID: 11400000, guid: c381c145f7af264449c0f363eaa1803d, type: 2}
-  playing_card_prefab: {fileID: 3340166600579662453, guid: 0bd6633848a924e44b3d2920f02c1c2a, type: 3}
   default_spacing: 40
   hover_spacing: 250
   hovered_card_anim_cursor: 0

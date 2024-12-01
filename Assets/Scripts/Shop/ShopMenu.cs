@@ -13,6 +13,7 @@ public class ShopMenu : MonoBehaviour
         for(int i=0; i<products.Products.Length; i++)
         {
             ShopBuyButton button = Instantiate(buy_button_prefab, product_container);
+            button.GetComponent<ProductDisplay>().product_config = products.Products[i];
             button.transaction_delegate += (transaction) =>
             {
                 TransactionManager.RegisterTransaction(transaction);
@@ -24,7 +25,6 @@ public class ShopMenu : MonoBehaviour
                 }
             };
             button.deckPanel = deck_panel;
-            button.product = products.Products[i];
             button.popup_container = popup_container;
         }
     }
