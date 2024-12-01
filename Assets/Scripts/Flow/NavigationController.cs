@@ -25,8 +25,8 @@ public class NavigationController: MonoBehaviour
 
     public void Init()
     {
-        currentState = GameState.Presentation;
-        dataDictionnary[GameState.Presentation].Part.StartPart();
+        currentState = GameState.Intro;
+        dataDictionnary[GameState.Intro].Part.StartPart();
     }
 
     private void Awake()
