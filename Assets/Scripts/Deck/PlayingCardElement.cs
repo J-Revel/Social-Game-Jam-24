@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -10,6 +11,7 @@ public class PlayingCardElement : MonoBehaviour, IPointerEnterHandler, IPointerE
     public System.Action hover_end_delegate;
     public System.Action clicked_delegate;
     public Button button;
+    public TMP_Text reduction_text;
     public Image background_image;
     public Image outline_image;
     public Color default_background_color = Color.white;
@@ -24,7 +26,8 @@ public class PlayingCardElement : MonoBehaviour, IPointerEnterHandler, IPointerE
         rect_transform = GetComponent<RectTransform>();
         button = GetComponent<Button>();
         background_image.sprite = config.image;
-        outline_image.enabled = false; 
+        outline_image.enabled = false;
+        reduction_text.text = Mathf.RoundToInt(100 * config.price_multiplier).ToString();
     }
 
     public void OnPointerEnter(PointerEventData eventData)

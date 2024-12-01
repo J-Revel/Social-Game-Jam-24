@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b4ef533d0ea601545bb8553bee21eb89, type: 3}
-  m_Name: Card Test 01
+  m_Name: Coupon_D_Vegetable 20
   m_EditorClassIdentifier: 
-  card_prefab: {fileID: 3340166600579662453, guid: 0bd6633848a924e44b3d2920f02c1c2a, type: 3}
+  card_prefab: {fileID: 3340166600579662453, guid: a7fc3798201cb7f489c00014cf1a65be, type: 3}
   image: {fileID: 21300000, guid: 58e5f4b04fe410649b6338a12c63b1a0, type: 3}
   tag_filters:
   - filter_type: 0
@@ -21,4 +21,4 @@ MonoBehaviour:
   default_size: 0
   hovered_size: 0
   hover_anim_duration: 0
-  price_multiplier: 0.5
+  price_multiplier: 0.2
