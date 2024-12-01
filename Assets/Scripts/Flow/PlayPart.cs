@@ -29,7 +29,7 @@ public class PlayPart : GamePart
     {
         //Money Modifier
         int time = baseLevelData.StartingTime;
-        int money = baseLevelData.StartingMoney + Global.CurrentWeeklyEvent.MoneyModifier;
+        int money = UnityEngine.Random.Range(baseLevelData.StartingMoneyMin ,baseLevelData.StartingMoneyMax) + Global.CurrentWeeklyEvent.MoneyModifier;
         this.currentLevel.GetComponentInChildren<MoneyBag>().Init(time, money);
 
         // Promo Modifier
@@ -39,10 +39,11 @@ public class PlayPart : GamePart
         // HelpProductCount Modifier
         ShopConfig HelpShopConfig = Global.ShopConfigs[2];
         HelpShopConfig.MaxProductCount = baseLevelData.HelpProductCount + Global.CurrentWeeklyEvent.HelpProductCountModifier;
+        // TODO apply
 
         // Meal Modifier
         int mealNeededCount = baseLevelData.MealNeeded + Global.CurrentWeeklyEvent.MealNeededModifier;
-        //this.currentLevel.GetComponentInChildren<ScoreManager>().Init(mealNeededCount);
+        ScoreManager.Init(mealNeededCount);
 
         // Help Access Modifier
         this.currentLevel.GetComponentInChildren<HelpAccesserTag>().gameObject.SetActive(Global.CurrentWeeklyEvent.HelpAvaillable);

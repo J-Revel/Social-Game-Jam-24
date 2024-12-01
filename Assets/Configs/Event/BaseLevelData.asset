@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: BaseLevelData
   m_EditorClassIdentifier: 
   StartingTime: 30
-  StartingMoney: 4500
+  StartingMoneyMin: 3500
+  StartingMoneyMax: 4500
   StartingCouponsCount: 5
   MealNeeded: 21
   HelpProductCount: 3

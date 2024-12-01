@@ -62,20 +62,15 @@ public class EndPanel : GamePart
             }
         }
 
-        int goodMealCount = goodAlimentAmounts.Min();
-        int badMealCount = Mathf.CeilToInt(((float)(goodAlimentAmounts.Sum() - goodMealCount*3))/3);
-        int mealsMissed = scoreConfig.targetMealCount - goodMealCount - badMealCount;
-        int score = goodMealCount * scoreConfig.goodMealMultiplier 
-                    + badMealCount * scoreConfig.badMealMultiplier
-                    + snackAmount * scoreConfig.snackMultiplier;
+        var result = ScoreManager.GetScore();
         
-        goodResultLine.SetResult(goodMealCount);
-        badResultLine.SetResult(badMealCount);
-        scoreResultLine.SetResult(score);
+        goodResultLine.SetResult(result.GoodMealCount);
+        badResultLine.SetResult(result.BadMealCount);
+        scoreResultLine.SetResult(result.Score);
 
         var currentEvent = Global.CurrentWeeklyEvent;
         titleText.text = currentEvent.TitleLocKey.GetLocalizedString();
-        resultText.text = mealsMissed <= 0 ? currentEvent.SuccessLocKey.GetLocalizedString() : String.Format(currentEvent.FailedLocKey.GetLocalizedString(), mealsMissed);
+        resultText.text = result.MissedMealCount <= 0 ? currentEvent.SuccessLocKey.GetLocalizedString() : String.Format(currentEvent.FailedLocKey.GetLocalizedString(), result.MissedMealCount);
         PedagogicTextCouple pickedTextCouple = currentEvent.PedagogicTexts[UnityEngine.Random.Range(0, currentEvent.PedagogicTexts.Length)];
         citationText.text = pickedTextCouple.CitationLocKey.GetLocalizedString();
         factText.text = pickedTextCouple.FactLocKey.GetLocalizedString();
