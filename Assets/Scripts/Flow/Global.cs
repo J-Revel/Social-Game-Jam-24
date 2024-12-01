@@ -45,12 +45,15 @@ public class Global : MonoBehaviour
         {
             ShopConfig shopConfig = this.shopConfigs[i];
             currentShopList[i] = new ShopContentData();
-            currentShopList[i].Products = new ShopContentElement[shopConfig.MaxProductCount];
+            currentShopList[i].Products = new ProductConfig[shopConfig.MaxProductCount];
+            currentShopList[i].coupons = shopConfig.coupons;
+            currentShopList[i].coupon_gain_probability = shopConfig.coupon_gain_probability;
             for (int p = 0; p < shopConfig.MaxProductCount; p++)
             {
                 int productPickIndex = Random.Range(0, shopConfig.AvailableProducts.Length);
-                ShopProductConfig product = shopConfig.AvailableProducts[productPickIndex];
+                ProductConfig product = shopConfig.AvailableProducts[productPickIndex];
                 //product.product
+                /*
                 float promo_random_value = Random.Range(0, 1.0f);
                 float promo_weight_sum = 0;
                 for(int j=0; j<product.promos.Length; j++)
@@ -67,12 +70,8 @@ public class Global : MonoBehaviour
                         break;
                     }
                 }
-                currentShopList[i].Products[p] = new ShopContentElement
-                {
-                    product = product.product,
-                    promo = product.promos[promo_index].config,
-                };
-
+                */
+                currentShopList[i].Products[p] = product; 
             }
         }
 

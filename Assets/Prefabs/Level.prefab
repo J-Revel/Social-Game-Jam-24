@@ -402,10 +402,10 @@ MonoBehaviour:
   _dataDictionnary:
   - Type: 1
     Counter: {fileID: 977967186875073996}
-    Amount: 0
+    Amount: 50
   - Type: 0
     Counter: {fileID: 2120560838743393802}
-    Amount: 0
+    Amount: 10
   Money: 0
   Time: 0
 --- !u!1 &3563713087823634206

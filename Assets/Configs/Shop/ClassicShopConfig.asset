@@ -13,10 +13,13 @@ MonoBehaviour:
   m_Name: ClassicShopConfig
   m_EditorClassIdentifier: 
   AvailableProducts:
-  - product: {fileID: 11400000, guid: 4e2e80c2e8508a64aa3e5009ae3941da, type: 2}
-    promos:
-    - config: {fileID: 11400000, guid: 283e3b057730dc0449425fb268bd9afa, type: 2}
-      probability_weight: 1
-    - config: {fileID: 11400000, guid: 70ce934c6f176ad4ba7fd520f24ff9a5, type: 2}
-      probability_weight: 0.5
+  - {fileID: 11400000, guid: f2b3dc23f3d752649b001232478828ce, type: 2}
+  - {fileID: 11400000, guid: e8f847b82d79a7d458106a9970265fec, type: 2}
+  - {fileID: 11400000, guid: 47977458a1ee0eb418e51e490b66d43e, type: 2}
+  - {fileID: 11400000, guid: 0f2864093cfcb584691d5fcae50e0da4, type: 2}
+  - {fileID: 11400000, guid: f1f6bed24a9433e44bcb737db1a16c5b, type: 2}
+  - {fileID: 11400000, guid: 18bb453a3d85b264ebfa6971214eb613, type: 2}
   MaxProductCount: 10
+  coupon_gain_probability: 0.5
+  coupons:
+  - {fileID: 11400000, guid: c381c145f7af264449c0f363eaa1803d, type: 2}

@@ -22,5 +22,7 @@ public class ShopContentElement
 }
 public class ShopContentData
 {
-    public ShopContentElement[] Products;
+    public ProductConfig[] Products;
+    public float coupon_gain_probability = 0.5f;
+    public PlayingCardConfig[] coupons;
 }
