@@ -70,7 +70,7 @@ public class EndPanel : GamePart
                     + snackAmount * scoreConfig.snackMultiplier;
         
         goodResultLine.SetResult(goodMealCount);
-        badResultLine.SetResult(score);
+        badResultLine.SetResult(badMealCount);
         scoreResultLine.SetResult(score);
 
         var currentEvent = Global.CurrentWeeklyEvent;
