@@ -20,4 +20,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b8f94d001e5612941968991080caed44, type: 2}
   - {fileID: 11400000, guid: fb8b31036ca710d4498c89bce5fc8f73, type: 2}
   - {fileID: 11400000, guid: 734b74cfbc315b349998c38a23125e48, type: 2}
-  aliments: []
+  aliments:
+  - Type: 1
+    Amount: 1

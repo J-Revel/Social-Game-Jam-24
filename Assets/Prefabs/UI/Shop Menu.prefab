@@ -195,6 +195,7 @@ MonoBehaviour:
   popup_container: {fileID: 7164116063316500889}
   buy_button_prefab: {fileID: 2523948620029996730, guid: c746ccb209a2b304987d4b8fb8478e62, type: 3}
   deck_panel: {fileID: 8083127992633317779}
+  card_bonus_popup: {fileID: 3744069182079910754, guid: 4a6ba72d587abe74cb84d52e7f0645e6, type: 3}
 --- !u!1 &7238745955953252410
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,8 +270,8 @@ MonoBehaviour:
   hover_spacing: 250
   hovered_card_anim_cursor: 0
   hovered_card: 0
-  hovered_anim_duration: 0.5
-  hover_cursor_anim_speed: 3.333333
+  hovered_anim_duration: 0.3
+  hover_cursor_anim_speed: 3
   fold_effect_duration: 0.3
   fold_effect_time: 0
   allow_selection: 0

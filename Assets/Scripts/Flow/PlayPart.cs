@@ -26,15 +26,19 @@ public class PlayPart : GamePart
         // Pick Shop Products for each shop
         for (int i = 0; i < Global.ShopConfigs.Length; i++)
         {
+
             ShopConfig shopConfig = Global.ShopConfigs[i];
             newShopContent[i] = new ShopContentData();
-            newShopContent[i].Products = new ShopContentElement[shopConfig.MaxProductCount];
+            newShopContent[i].Products = new ProductConfig[shopConfig.MaxProductCount];
+            newShopContent[i].coupons = shopConfig.coupons;
+            newShopContent[i].coupon_gain_probability = shopConfig.coupon_gain_probability;
             for (int p = 0; p < shopConfig.MaxProductCount; p++)
             {
-                int productPickIndex = UnityEngine.Random.Range(0, shopConfig.AvailableProducts.Length);
-                ShopProductConfig product = shopConfig.AvailableProducts[productPickIndex];
+                int productPickIndex = Random.Range(0, shopConfig.AvailableProducts.Length);
+                ProductConfig product = shopConfig.AvailableProducts[productPickIndex];
                 //product.product
-                float promo_random_value = UnityEngine.Random.Range(0, 1.0f);
+                /*
+                float promo_random_value = Random.Range(0, 1.0f);
                 float promo_weight_sum = 0;
                 for(int j=0; j<product.promos.Length; j++)
                 {
@@ -50,12 +54,8 @@ public class PlayPart : GamePart
                         break;
                     }
                 }
-
-                newShopContent[i].Products[p] = new ShopContentElement
-                {
-                    product = product.product,
-                    promo = product.promos[promo_index].config,
-                };
+                */
+                newShopContent[i].Products[p] = product; 
             }
         }
 
