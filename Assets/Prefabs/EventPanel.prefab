@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 9051009893690178803}
   - component: {fileID: 3083727314258378486}
   m_Layer: 0
-  m_Name: EndPanel
+  m_Name: EndPart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -475,7 +475,7 @@ GameObject:
   - component: {fileID: 948032369168100976}
   - component: {fileID: 8878569346326461841}
   m_Layer: 0
-  m_Name: StartPanel
+  m_Name: StartPart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1388,7 +1388,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4755342456369583319}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3083727314258378486}
+        m_TargetAssemblyTypeName: EndPanel, Assembly-CSharp
+        m_MethodName: Next
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7442107942935369005
 GameObject:
   m_ObjectHideFlags: 0
@@ -2034,7 +2046,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7567580200550608591}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8878569346326461841}
+        m_TargetAssemblyTypeName: StartPanel, Assembly-CSharp
+        m_MethodName: Next
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8919491723642117717
 GameObject:
   m_ObjectHideFlags: 0
