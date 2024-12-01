@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4ef533d0ea601545bb8553bee21eb89, type: 3}
   m_Name: Coupon_D_30_Prot
   m_EditorClassIdentifier: 
-  card_prefab: {fileID: 3340166600579662453, guid: 0bd6633848a924e44b3d2920f02c1c2a, type: 3}
+  card_prefab: {fileID: 3340166600579662453, guid: f8fd6d303c34b244ebd068185f730947, type: 3}
   image: {fileID: 21300000, guid: 9b367ca33f0ebd44d902f3b08fdde5bf, type: 3}
   tag_filters:
   - filter_type: 0

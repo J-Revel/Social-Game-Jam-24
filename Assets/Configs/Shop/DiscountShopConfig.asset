@@ -22,4 +22,14 @@ MonoBehaviour:
   MaxProductCount: 1
   coupon_gain_probability: 0.5
   coupons:
-  - {fileID: 11400000, guid: c381c145f7af264449c0f363eaa1803d, type: 2}
+  - {fileID: 11400000, guid: 5301b18bf94095f419d1d450e67489db, type: 2}
+  - {fileID: 11400000, guid: b71a43d5edea8e24e86fc4fd09820e3c, type: 2}
+  - {fileID: 11400000, guid: 148811c7cd3852948abafc1f87d6275a, type: 2}
+  - {fileID: 11400000, guid: a3556f6f621a4fd4ab57a344252a6036, type: 2}
+  - {fileID: 11400000, guid: 7738b031d22a64b48be70c9d7c1c5965, type: 2}
+  - {fileID: 11400000, guid: 8bd1f3de0a8386346b79b915870a84c1, type: 2}
+  - {fileID: 11400000, guid: 6b3184f60a2d4e940982903d232c741c, type: 2}
+  - {fileID: 11400000, guid: 4bcd0fd1f99ceaf44b4586280be09b4b, type: 2}
+  - {fileID: 11400000, guid: 214f59b87655c8e43acaa31e6e01ed87, type: 2}
+  - {fileID: 11400000, guid: a8427410a51353643bd6ea462aaa1a44, type: 2}
+  - {fileID: 11400000, guid: 3bf446a5c07b22346b270fbf569ba1c4, type: 2}

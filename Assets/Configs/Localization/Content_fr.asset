@@ -130,12 +130,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 702276174856205
-    m_Localized: "\"- Est-ce qu'il ne faut peut \xEAtre pas faire un peu plus attention
-      \xE0 d\xE9penser de l'argent pour des fruits et l\xE9gumes, que d'acheter des
-      boissons gazeuses qui peuvent avoir un impact sur la sant\xE9 qui n'est pas
-      forc\xE9ment formidable ? (Bruno Lemaire, ministre de l'\xE9conomie 2017-2024)                 
-      -Faut-il avoir le choix et malheureusement trop de personnes aujiourd'hui n'ont
-      pas ce luxe. (Karine Jacquemart, directrice Foodwatch France)"
+    m_Localized: "Selon une \xE9tude de septembre 2023, r\xE9alis\xE9e par le Centre
+      de recherche pour l\u2019\xE9tude et l\u2019observation des conditions de vie
+      (Cr\xE9doc), entre 35% et 49% des personnes en situation de pr\xE9carit\xE9
+      alimentaire ne se rendent dans aucun organisme de l'aide alimentaire par g\xEAne
+      ou par honte."
     m_Metadata:
       m_Items: []
   - m_Id: 702276174856206
@@ -182,11 +181,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 702276174856213
-    m_Localized: VEGETALIEN
+    m_Localized: Moi vivant, demander de l'aide... Jamais !
     m_Metadata:
       m_Items: []
   - m_Id: 702276174856217
-    m_Localized: '#REF!'
+    m_Localized: "\"Je ne suis jamais all\xE9e aux restos du C\u0153ur, mais je crois
+      que je vais devoir y aller. J'ai un peu la honte. J'ai boss\xE9 pendant quinze
+      mois et l\xE0, je n'ai plus rien. Mon contrat s'est termin\xE9 en septembre
+      et ils n'ont pas voulu le renouveler\" (T\xE9moignage d'une auditrice sur France
+      Bleu P\xE9rigord, le 19 nov 2024)"
     m_Metadata:
       m_Items: []
   - m_Id: 702276174856219
@@ -229,6 +232,99 @@ MonoBehaviour:
       r\xE9alis\xE9 par des caisses g\xE9r\xE9es d\xE9mocratiquement, financement
       par la cr\xE9ation d\u2019une cotisation sociale \xE0 taux unique sur la production
       r\xE9elle de valeur ajout\xE9. https://securite-sociale-alimentation.org/ "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 931747247144960
+    m_Localized: "F\xE9licitations tu as pass\xE9 une semaine sans sauter aucun repas,
+      et tu as pu profiter d'un bon repas entre ami.e.s."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 931747305865216
+    m_Localized: "Tu as saut\xE9 {0} repas cette semaine, et tu as pu profiter d'un
+      bon repas partag\xE9 entre ami.e.s."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 931747305865217
+    m_Localized: "F\xE9licitation, malgr\xE9 des factures qui ont augment\xE9es,
+      tu as pass\xE9 une semaine sans sauter aucun repas."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 931747305865218
+    m_Localized: "Tu as saut\xE9 {0} repas cette semaine, mais tu as r\xE9ussi \xE0
+      payer toutes tes factures d'\xE9nergie ce mois."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 931747305865219
+    m_Localized: "F\xE9licitation, tu as pass\xE9 une semaine sans sauter aucun repas."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 931747305865220
+    m_Localized: "Tu as saut\xE9 {0} repas cette semaine."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 931747305865221
+    m_Localized: "F\xE9licitation, tu as pass\xE9 une semaine sans sauter aucun repas.
+      Tu as crois\xE9 tes voisins dans la file d'attente de la banque alimentaire,
+      eux n'ont pas eu cette chance,"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 931747305865222
+    m_Localized: "Tu as saut\xE9 {0} repas cette semaine. Tu esp\xE8res que tes voisins
+      crois\xE9s \xE0 la banque alimentaire auront eu plus de chance que toi."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 702276174856214
+    m_Localized: "Malgr\xE9 les difficult\xE9s \xE0 boucler les fins de mois, tu
+      t'es jur\xE9 de ne jamais mettre les pieds au Resto du Coeur. Ce n'est et ce
+      ne sera jamais pour toi."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 931747305865223
+    m_Localized: "Cela fait plusieurs fois apr\xE8s plus de deux heure pass\xE9es
+      dans la file d'attente, qu'il n'y a plus assez de denr\xE9es pour toi. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 702276174856215
+    m_Localized: "Selon une \xE9tude de septembre 2023, r\xE9alis\xE9e par le Centre
+      de recherche pour l\u2019\xE9tude et l\u2019observation des conditions de vie
+      (Cr\xE9doc), entre 35% et 49% des personnes en situation de pr\xE9carit\xE9
+      alimentaire ne se rendent dans aucun organisme de l'aide alimentaire par g\xEAne
+      ou par honte."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 931747305865224
+    m_Localized: "En septembre 2023, le pr\xE9sident des Restos du Coeur, Patrice
+      Douret lance un cri d'alerte : submerg\xE9s, les Restos du Coeur sont contraints,
+      pour la premi\xE8re fois, de refuser des b\xE9n\xE9ficiaires, et risquent de
+      mettre la cl\xE9 sous la porte."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 931747305865225
+    m_Localized: "\"Globalement, les familles qui ont des revenus au-dessus du RSA
+      sont automatiquement refus\xE9es. J'ai d\xE9j\xE0 d\xFB refuser 25 familles
+      depuis le 15 octobre. \xC7a fait du mal aux b\xE9n\xE9voles et \xE7a fait du
+      mal aux b\xE9n\xE9ficiaires ( .. ) c'est pour moi, une \xE9volution contraire
+      \xE0 ce que voulait Coluche\" (T\xE9moignage du responsable des Restos du Coeur
+      de Bagneux, sur France 3, le 22 nov 2023)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 931747305865226
+    m_Localized: "F\xE9licitation, tu as pass\xE9 une semaine sans sauter aucun repas.
+      Et ce sans l'aide de personne."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 931747305865227
+    m_Localized: "Tu as saut\xE9 {0} repas cette semaine."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 931747305865228
+    m_Localized: "F\xE9licitation, tu as pass\xE9 une semaine sans sauter aucun repas,
+      et ce m\xEAme si l'aide alimentaire ne t'\xE9tais pas accessible."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 931747305865229
+    m_Localized: "Tu as saut\xE9 {0} repas cette semaine. Tu pris pour que la semaine
+      prochaine on ne te refuse pas aux Restos du Coeur."
     m_Metadata:
       m_Items: []
   references:
