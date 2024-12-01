@@ -9,19 +9,23 @@ public class Global : MonoBehaviour
     [SerializeField] private WeeklyEventsConfig weeklyEventsConfig;
     [SerializeField] private ShopConfig[] shopConfigs;
 
-    [Header("Prefab")]
-    [SerializeField] private GameObject levelPrefab;
-    private GameObject currentLevelPrefab = null;
-
     public static WeeklyEventsConfig WeeklyEventsConfig => singleton.weeklyEventsConfig;
     public static ShopConfig[] ShopConfigs => singleton.shopConfigs;
 
     private WeeklyEventConfig currentWeeklyEvent;
     private ShopContentData[] currentShopList;
 
-    public static WeeklyEventConfig CurrentWeeklyEvent => singleton.currentWeeklyEvent;
-    public static ShopContentData[] CurrentShopList => singleton.currentShopList;
+    public static WeeklyEventConfig CurrentWeeklyEvent {get => singleton.currentWeeklyEvent; set => singleton.currentWeeklyEvent = value;}
+    public static ShopContentData[] CurrentShopList {get => singleton.currentShopList; set => singleton.currentShopList = value;}
 
+    [Header("Navigation")]
+    [SerializeField] private NavigationController navigationController;
+
+    public static void GoToState(GameState nextGameState)
+    {
+        singleton.navigationController.GoToState(nextGameState);
+    }
+            
     void Awake()
     {
         singleton = this;
@@ -29,69 +33,6 @@ public class Global : MonoBehaviour
 
     void Start()
     {
-        StartLevel();
-    }
-
-    private void StartLevel()
-    {
-        // Pick Next Event
-        var potentialEvents = this.weeklyEventsConfig.AvaillableEvents.Where(e => e != this.currentWeeklyEvent).ToArray();
-        this.currentWeeklyEvent = potentialEvents[Random.Range(0, potentialEvents.Length)];
-
-        Reset();
-
-        // Pick Shop Products for each shop
-        for (int i = 0; i < this.shopConfigs.Length; i++)
-        {
-            ShopConfig shopConfig = this.shopConfigs[i];
-            currentShopList[i] = new ShopContentData();
-            currentShopList[i].Products = new ShopContentElement[shopConfig.MaxProductCount];
-            for (int p = 0; p < shopConfig.MaxProductCount; p++)
-            {
-                int productPickIndex = Random.Range(0, shopConfig.AvailableProducts.Length);
-                ShopProductConfig product = shopConfig.AvailableProducts[productPickIndex];
-                //product.product
-                float promo_random_value = Random.Range(0, 1.0f);
-                float promo_weight_sum = 0;
-                for(int j=0; j<product.promos.Length; j++)
-                {
-                    promo_weight_sum += product.promos[j].probability_weight;
-                }
-                int promo_index = 0;
-                for(int j=0; j<product.promos.Length; j++)
-                {
-                    promo_random_value -= product.promos[j].probability_weight / promo_weight_sum;
-                    if (promo_random_value < 0.0f)
-                    {
-                        promo_index = j;
-                        break;
-                    }
-                }
-                currentShopList[i].Products[p] = new ShopContentElement
-                {
-                    product = product.product,
-                    promo = product.promos[promo_index].config,
-                };
-
-            }
-        }
-
-        this.currentLevelPrefab = GameObject.Instantiate(levelPrefab);
-    }
-
-    private void Reset()
-    {
-        this.currentShopList = new ShopContentData[this.shopConfigs.Length];
-        if(this.currentLevelPrefab != null)
-        {
-            GameObject.Destroy(this.currentLevelPrefab);
-            this.currentLevelPrefab = null;
-        }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        navigationController.Init();
     }
 }

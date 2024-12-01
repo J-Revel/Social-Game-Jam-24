@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AvaillableEvents:
   - {fileID: 11400000, guid: b5bbf67ea97b83742b4ba312f200a251, type: 2}
-  - {fileID: 11400000, guid: 57b063b62074405428dfc033ac7aca86, type: 2}
-  - {fileID: 11400000, guid: 2169d1aea0eeda54a9bc2d263d68a350, type: 2}
-  - {fileID: 11400000, guid: a571f64149cf84b4ca149ad821d5ba22, type: 2}
-  - {fileID: 11400000, guid: a334e4db38dc91047afa457cc9780fed, type: 2}
+  - {fileID: 11400000, guid: d43d018fadd4dd646a21d3ac72340352, type: 2}
+  - {fileID: 11400000, guid: 48659cf829f0087469dd2ac118ded81b, type: 2}
+  - {fileID: 11400000, guid: 2a471f6b26eed334d8c250c586c8ca79, type: 2}
+  - {fileID: 11400000, guid: f0f0a9d165c2301408a06c2630f34c4a, type: 2}

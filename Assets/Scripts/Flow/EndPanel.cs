@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using System;
 using System.Linq;
 
-public class EndPanel : MonoBehaviour
+public class EndPanel : GamePart
 {
     [Header("ScoreArea")]
     [SerializeField] private ScoreConfig scoreConfig;
@@ -21,8 +21,19 @@ public class EndPanel : MonoBehaviour
     [SerializeField] private TextMeshProUGUI resultText;
     [SerializeField] private TextMeshProUGUI factText;
     [SerializeField] private TextMeshProUGUI citationText;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public void Set()
+
+    public override void EndPart()
+    {
+        this.gameObject.SetActive(false);
+    }   
+
+    public override void StartPart()
+    {
+        UpdateVisual();
+        this.gameObject.SetActive(true);
+    }
+
+    public void UpdateVisual()
     {
         // Fill aliment lines
         foreach(int alimentIndex in Enum.GetValues(typeof(AlimentType)))
@@ -69,4 +80,9 @@ public class EndPanel : MonoBehaviour
         citationText.text = pickedTextCouple.CitationLocKey.GetLocalizedString();
         factText.text = pickedTextCouple.FactLocKey.GetLocalizedString();
     }
+
+    public void Next()
+    {
+        Global.GoToState(GameState.Presentation);
+    }  
 }

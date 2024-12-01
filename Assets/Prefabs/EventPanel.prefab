@@ -187,6 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ec1645eb04b0ca499118631b2591c0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameState: 4
   scoreConfig: {fileID: 11400000, guid: 36d7f44d6c245b44eb9c24b22173320c, type: 2}
   alimentResultLines:
   - {fileID: 8317665609162463571}
@@ -513,6 +514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82b6d59235bdcf34485efd38b690e66c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameState: 2
   titleText: {fileID: 6391336472078604418}
   descriptionText: {fileID: 883500654136421587}
 --- !u!1 &2694054851151676226

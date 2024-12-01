@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 017b5736731e58e408c6bca470519158, type: 3}
-  m_Name: InvitationEvent
+  m_Name: RegimEvent
   m_EditorClassIdentifier: 
   TitleLocKey:
     m_TableReference:
