@@ -17,7 +17,7 @@ public class ProductDisplay : MonoBehaviour
         if(icon_image != null)
             icon_image.sprite = product_config.icon;
         if(cost_text != null)
-            cost_text.text = (product_config.cost/100).ToString() + "€" + (product_config.cost%100).ToString("00");
+            cost_text.text = (product_config.cost/100).ToString() + "." + (product_config.cost%100).ToString("00");
     }
 
     void Update()
