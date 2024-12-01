@@ -28,9 +28,10 @@ public class HelpManager : MonoBehaviour
     private void DisplayHelp(HelpData data)
     {
         data.HasBeenDisplayed = true;
-        explanationOverlayImage.enabled = true;
         explanationOverlayImage.sprite = data.ExplaningSprite;
-        confirmationButton.gameObject.SetActive(true);
+        //TODO reactivate help
+        //confirmationButton.gameObject.SetActive(true);
+        //explanationOverlayImage.enabled = true;
     }
 
     public static void DisplayHelp() => singleton.DisplayHelp(singleton.GetCurrentHelpData());
