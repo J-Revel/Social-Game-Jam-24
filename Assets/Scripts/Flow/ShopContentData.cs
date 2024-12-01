@@ -1,5 +1,6 @@
 using JetBrains.Annotations;
 using System.Collections.Generic;
+using UnityEngine;
 
 [System.Serializable]
 public class ProductPromoConfig
@@ -22,6 +23,7 @@ public class ShopContentElement
 }
 public class ShopContentData
 {
+    public Sprite background_sprite;
     public ProductConfig[] Products;
     public float coupon_gain_probability = 0.5f;
     public PlayingCardConfig[] coupons;

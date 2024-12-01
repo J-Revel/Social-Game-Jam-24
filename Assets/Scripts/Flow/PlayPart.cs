@@ -58,6 +58,7 @@ public class PlayPart : GamePart
             newShopContent[i] = new ShopContentData();
             newShopContent[i].Products = new ProductConfig[Mathf.Min(shopConfig.MaxProductCount, shopConfig.AvailableProducts.Length)];
             newShopContent[i].coupons = shopConfig.coupons;
+            newShopContent[i].background_sprite = shopConfig.background_sprite;
             newShopContent[i].coupon_gain_probability = shopConfig.coupon_gain_probability;
             List<ProductConfig> unused_products = new List<ProductConfig>(shopConfig.AvailableProducts);
             for (int p = 0; p < shopConfig.MaxProductCount && unused_products.Count > 0; p++)
