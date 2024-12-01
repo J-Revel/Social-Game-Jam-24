@@ -201,7 +201,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2388039620282957606
 RectTransform:
   m_ObjectHideFlags: 0
@@ -712,6 +712,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openButton: {fileID: 2065382237759242761}
   mapOverlayPanel: {fileID: 89282502225357202}
+  endGamePanel: {fileID: 1744634896686395081}
   currentShopIndex: -1
   shop_prefab: {fileID: 8655415230438327303, guid: cc44228cb0d4c524a9adde2e432606e6, type: 3}
   shop_menu_container: {fileID: 6811614431815041883}
@@ -1263,7 +1264,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6544981347815316940}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1060529012693827315}
+        m_TargetAssemblyTypeName: MapManager, Assembly-CSharp
+        m_MethodName: ConfirmGoHome
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8461180543827772014
 GameObject:
   m_ObjectHideFlags: 0
@@ -1815,7 +1828,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8551190633279890834}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1060529012693827315}
+        m_TargetAssemblyTypeName: MapManager, Assembly-CSharp
+        m_MethodName: CancelGoHome
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8956330246712131981
 GameObject:
   m_ObjectHideFlags: 0
@@ -1939,20 +1964,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1060529012693827315}
         m_TargetAssemblyTypeName: MapManager, Assembly-CSharp
-        m_MethodName: ToggleMap
+        m_MethodName: GoHome
         m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1060529012693827315}
-        m_TargetAssemblyTypeName: MapManager, Assembly-CSharp
-        m_MethodName: GoToShop
-        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
