@@ -34,7 +34,7 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:1d011cddc3a5bad43bc1a07500b3e547
     m_TableEntryReference:
-      m_KeyId: 702276166467584
+      m_KeyId: 931747247144960
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -43,7 +43,7 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:1d011cddc3a5bad43bc1a07500b3e547
     m_TableEntryReference:
-      m_KeyId: 702276166467584
+      m_KeyId: 931747305865216
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -85,6 +85,11 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+  MoneyModifier: 0
+  HelpAvaillable: 1
+  StartingCouponsModifier: 0
+  HelpProductCountModifier: 0
+  MealNeededModifier: 3
   references:
     version: 2
     RefIds: []
