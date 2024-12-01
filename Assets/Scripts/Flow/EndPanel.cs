@@ -69,7 +69,7 @@ public class EndPanel : GamePart
                     + badMealCount * scoreConfig.badMealMultiplier
                     + snackAmount * scoreConfig.snackMultiplier;
         
-        goodResultLine.SetResult(score);
+        goodResultLine.SetResult(goodMealCount);
         badResultLine.SetResult(score);
         scoreResultLine.SetResult(score);
 
