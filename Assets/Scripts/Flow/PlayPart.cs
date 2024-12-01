@@ -18,6 +18,7 @@ public class PlayPart : GamePart
     {
         GenerateLevelData();
         this.currentLevel = GameObject.Instantiate(levelPrefab);
+        HelpManager.OnMapOpen();
         // TransactionManager.Set values ?
     }
 

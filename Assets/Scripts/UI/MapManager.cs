@@ -8,7 +8,6 @@ public class MapManager : MonoBehaviour
     [SerializeField] private GameObject mapOverlayPanel;
     
     public int currentShopIndex = -1;
-    public ShopData[] shops;
     public ShopMenu shop_prefab;
     private ShopMenu displayed_shop;
     public Transform shop_menu_container;
@@ -24,18 +23,15 @@ public class MapManager : MonoBehaviour
         currentShopIndex = shopIndex;
         displayed_shop = Instantiate(shop_prefab, shop_menu_container);
         displayed_shop.products = Global.CurrentShopList[currentShopIndex];
+        HelpManager.OnShopOpen(shopIndex);
     }
 
     public void ExitShop()
     {
         if (displayed_shop != null)
             Destroy(displayed_shop.gameObject);
-
+        HelpManager.OnMapOpen();
     }
-}
 
-[Serializable]
-public class ShopData
-{
-    public GameObject Shop;
+    public void AskForHelp() => HelpManager.DisplayHelp();
 }
