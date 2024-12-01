@@ -18,5 +18,6 @@ public class TransactionManager : MonoBehaviour
         transactions.Add(data);
         moneyBag?.PayForTransaction(data);
         alimentBag?.AddFromTransaction(data);
+        ScoreManager.OnTransactionUpdate();
     }
 }
