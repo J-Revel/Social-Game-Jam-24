@@ -1,3 +1,5 @@
+using NUnit.Framework;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -45,14 +47,15 @@ public class Global : MonoBehaviour
         {
             ShopConfig shopConfig = this.shopConfigs[i];
             currentShopList[i] = new ShopContentData();
-            currentShopList[i].Products = new ProductConfig[shopConfig.MaxProductCount];
+            currentShopList[i].Products = new ProductConfig[Mathf.Min(shopConfig.MaxProductCount, shopConfig.AvailableProducts.Length)];
             currentShopList[i].coupons = shopConfig.coupons;
             currentShopList[i].coupon_gain_probability = shopConfig.coupon_gain_probability;
-            for (int p = 0; p < shopConfig.MaxProductCount; p++)
+            List<ProductConfig> unused_products = new List<ProductConfig>(shopConfig.AvailableProducts);
+            for (int p = 0; p < shopConfig.MaxProductCount && unused_products.Count > 0; p++)
             {
-                int productPickIndex = Random.Range(0, shopConfig.AvailableProducts.Length);
-                ProductConfig product = shopConfig.AvailableProducts[productPickIndex];
-                //product.product
+                int productPickIndex = Random.Range(0, unused_products.Count);
+                ProductConfig product = unused_products[productPickIndex];
+                unused_products.RemoveAt(productPickIndex);
                 /*
                 float promo_random_value = Random.Range(0, 1.0f);
                 float promo_weight_sum = 0;

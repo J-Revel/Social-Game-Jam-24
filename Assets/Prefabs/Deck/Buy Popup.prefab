@@ -91,6 +91,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   product_icon: {fileID: 2819826103459438937}
   deckPanel: {fileID: 0}
+  product: {fileID: 0}
   price_display: {fileID: 5913201611202609627}
   confirm_button: {fileID: 5041783480299147574}
   cancel_button: {fileID: 7328780348568289791}

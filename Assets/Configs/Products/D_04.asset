@@ -15,7 +15,7 @@ MonoBehaviour:
   title: Riz Long grain
   cost: 215
   description: 
-  icon: {fileID: 21300000, guid: 426b5fe28412ee148aab59836f85d8cf, type: 3}
+  icon: {fileID: 21300000, guid: 43fdb27035b35ca4fb637702e74119bf, type: 3}
   tags:
   - {fileID: 11400000, guid: 384400eaa700a244f8cfc9019361b31d, type: 2}
   aliments:

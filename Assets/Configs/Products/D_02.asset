@@ -15,7 +15,7 @@ MonoBehaviour:
   title: Lentilles Conserve 500g
   cost: 276
   description: 
-  icon: {fileID: 21300000, guid: 426b5fe28412ee148aab59836f85d8cf, type: 3}
+  icon: {fileID: 21300000, guid: 624de4d200b5e7a479474b59595f667a, type: 3}
   tags:
   - {fileID: 11400000, guid: 384400eaa700a244f8cfc9019361b31d, type: 2}
   aliments:
