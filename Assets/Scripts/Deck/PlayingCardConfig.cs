@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 [CreateAssetMenu(fileName = "DeckElement", menuName = "Deck/Card")]
 public class PlayingCardConfig : ScriptableObject, IPointerEnterHandler, IPointerExitHandler
 {
+    public PlayingCardElement card_prefab;
     public Sprite image;
     public ProductFilter[] tag_filters;
     public string text;

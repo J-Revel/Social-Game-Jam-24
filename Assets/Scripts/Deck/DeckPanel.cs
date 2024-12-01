@@ -7,7 +7,6 @@ using UnityEngine.EventSystems;
 public class DeckPanel : MonoBehaviour, IPointerExitHandler
 {
     public PlayingCardConfig[] deck;
-    public PlayingCardElement playing_card_prefab;
     private List<PlayingCardElement> playing_cards = new List<PlayingCardElement>();
     public float default_spacing = 40;
     public float hover_spacing = 130;
@@ -100,7 +99,7 @@ public class DeckPanel : MonoBehaviour, IPointerExitHandler
 
     public void AddCard(PlayingCardConfig card)
     {
-        PlayingCardElement playing_card = Instantiate(playing_card_prefab, transform);
+        PlayingCardElement playing_card = Instantiate(card.card_prefab, transform);
         playing_card.config = card;
         playing_cards.Add(playing_card);
         HoverEffect effect = new HoverEffect { };

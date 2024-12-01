@@ -4,20 +4,19 @@ using UnityEngine.UI;
 
 public class ShopBuyPopup : MonoBehaviour
 {
-    public Image product_icon;
     public DeckPanel deckPanel;
-    public ProductConfig product;
     public TMP_Text price_display;
     public Button confirm_button;
     public Button cancel_button;
     public System.Action popup_close_delegate;
     public System.Action<TransactionEventData> buy_delegate;
+    private ProductDisplay product_display;
 
-    int price { get { return Mathf.RoundToInt(product.cost * deckPanel.selected_price_multiplier); } }
+    int price { get { return Mathf.RoundToInt(product_display.product_config.cost * deckPanel.selected_price_multiplier); } }
             
     void Start()
     {
-        product_icon.sprite = product.icon;
+        product_display = GetComponent<ProductDisplay>();
         confirm_button.onClick.AddListener(() =>
         {
             popup_close_delegate?.Invoke();
@@ -26,7 +25,7 @@ public class ShopBuyPopup : MonoBehaviour
             buy_delegate?.Invoke(new TransactionEventData
             {
                 PriceCost = price,
-                Product = product,
+                Product = product_display.product_config,
             });
         });
         cancel_button.onClick.AddListener(() => {
