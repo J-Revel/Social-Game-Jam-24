@@ -26,6 +26,7 @@ public class ShopBuyPopup : MonoBehaviour
             {
                 PriceCost = price,
                 Product = product_display.product_config,
+                TimeCost = 1,
             });
         });
         cancel_button.onClick.AddListener(() => {

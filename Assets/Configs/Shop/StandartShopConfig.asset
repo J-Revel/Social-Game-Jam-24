@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc907d17882521043a16e8acecb6650f, type: 3}
   m_Name: StandartShopConfig
   m_EditorClassIdentifier: 
+  background_sprite: {fileID: 21300000, guid: 85b57897a79d8f947bdbbea92543901f, type: 3}
   AvailableProducts:
   - {fileID: 11400000, guid: 0566d867e62f53c4ba31b9f26dabeafc, type: 2}
   - {fileID: 11400000, guid: 39956bbeeef12844ebd5282d38175ece, type: 2}

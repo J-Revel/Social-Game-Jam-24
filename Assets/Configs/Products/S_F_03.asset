@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5f9b2d04240224458deb9856387a1e8, type: 3}
   m_Name: S_F_03
   m_EditorClassIdentifier: 
-  title: Spaghettis bio 500g
-  cost: 125
+  title: "Bl\xE9 nature sachet"
+  cost: 209
   description: 
-  icon: {fileID: 21300000, guid: 8587814e024bc4f4d8ac538c04901684, type: 3}
+  icon: {fileID: 21300000, guid: 0f2b4839f8ffa90479c22e781339efa6, type: 3}
   tags:
   - {fileID: 11400000, guid: 384400eaa700a244f8cfc9019361b31d, type: 2}
   - {fileID: 11400000, guid: fb8b31036ca710d4498c89bce5fc8f73, type: 2}

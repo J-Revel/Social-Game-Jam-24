@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShopMenu : MonoBehaviour
 {
@@ -8,8 +9,11 @@ public class ShopMenu : MonoBehaviour
     public ShopBuyButton buy_button_prefab;
     public DeckPanel deck_panel;
     public CardBonusPopup card_bonus_popup;
+    public Image background_image;
+
     void Start()
     {
+        background_image.sprite = products.background_sprite;
         for(int i=0; i<products.Products.Length; i++)
         {
             ShopBuyButton button = Instantiate(buy_button_prefab, product_container);
