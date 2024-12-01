@@ -111,8 +111,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6749200834649156848}
-  - {fileID: 1671143747186003294}
   - {fileID: 6154043485089579432}
+  - {fileID: 1671143747186003294}
   - {fileID: 5186680509829145702}
   m_Father: {fileID: 5132549791932047995}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -373,7 +373,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1671143747186003294
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3195,6 +3195,10 @@ PrefabInstance:
     - target: {fileID: 4656116274570839544, guid: 5eb2fda6486651b4f81b8e8fb5174462, type: 3}
       propertyPath: m_Name
       value: PausePanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4656116274570839544, guid: 5eb2fda6486651b4f81b8e8fb5174462, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6424299213311130328, guid: 5eb2fda6486651b4f81b8e8fb5174462, type: 3}
       propertyPath: m_Pivot.x
