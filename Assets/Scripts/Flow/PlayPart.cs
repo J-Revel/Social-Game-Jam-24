@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayPart : GamePart
@@ -26,17 +27,17 @@ public class PlayPart : GamePart
         // Pick Shop Products for each shop
         for (int i = 0; i < Global.ShopConfigs.Length; i++)
         {
-
             ShopConfig shopConfig = Global.ShopConfigs[i];
             newShopContent[i] = new ShopContentData();
-            newShopContent[i].Products = new ProductConfig[shopConfig.MaxProductCount];
+            newShopContent[i].Products = new ProductConfig[Mathf.Min(shopConfig.MaxProductCount, shopConfig.AvailableProducts.Length)];
             newShopContent[i].coupons = shopConfig.coupons;
             newShopContent[i].coupon_gain_probability = shopConfig.coupon_gain_probability;
-            for (int p = 0; p < shopConfig.MaxProductCount; p++)
+            List<ProductConfig> unused_products = new List<ProductConfig>(shopConfig.AvailableProducts);
+            for (int p = 0; p < shopConfig.MaxProductCount && unused_products.Count > 0; p++)
             {
-                int productPickIndex = Random.Range(0, shopConfig.AvailableProducts.Length);
-                ProductConfig product = shopConfig.AvailableProducts[productPickIndex];
-                //product.product
+                int productPickIndex = Random.Range(0, unused_products.Count);
+                ProductConfig product = unused_products[productPickIndex];
+                unused_products.RemoveAt(productPickIndex);
                 /*
                 float promo_random_value = Random.Range(0, 1.0f);
                 float promo_weight_sum = 0;
@@ -55,7 +56,7 @@ public class PlayPart : GamePart
                     }
                 }
                 */
-                newShopContent[i].Products[p] = product; 
+                newShopContent[i].Products[p] = product;
             }
         }
 
