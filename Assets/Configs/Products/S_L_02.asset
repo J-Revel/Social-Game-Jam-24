@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5f9b2d04240224458deb9856387a1e8, type: 3}
   m_Name: S_L_02
   m_EditorClassIdentifier: 
-  title: Sac Carottes 3kg
-  cost: 267
+  title: "Avocat Unit\xE9"
+  cost: 100
   description: 
-  icon: {fileID: 21300000, guid: d262bf6229354e849b2420c1f130fe70, type: 3}
+  icon: {fileID: 21300000, guid: 4915689ec04c416409bca870029f0b90, type: 3}
   tags:
   - {fileID: 11400000, guid: 734b74cfbc315b349998c38a23125e48, type: 2}
   - {fileID: 11400000, guid: b8f94d001e5612941968991080caed44, type: 2}

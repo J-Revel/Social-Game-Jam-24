@@ -13,12 +13,21 @@ MonoBehaviour:
   m_Name: StandartShopConfig
   m_EditorClassIdentifier: 
   AvailableProducts:
-  - {fileID: 11400000, guid: f2b3dc23f3d752649b001232478828ce, type: 2}
-  - {fileID: 11400000, guid: e8f847b82d79a7d458106a9970265fec, type: 2}
-  - {fileID: 11400000, guid: 47977458a1ee0eb418e51e490b66d43e, type: 2}
-  - {fileID: 11400000, guid: 0f2864093cfcb584691d5fcae50e0da4, type: 2}
-  - {fileID: 11400000, guid: f1f6bed24a9433e44bcb737db1a16c5b, type: 2}
-  - {fileID: 11400000, guid: 18bb453a3d85b264ebfa6971214eb613, type: 2}
+  - {fileID: 11400000, guid: 0566d867e62f53c4ba31b9f26dabeafc, type: 2}
+  - {fileID: 11400000, guid: 39956bbeeef12844ebd5282d38175ece, type: 2}
+  - {fileID: 11400000, guid: 6afb344b8084b2541b4d6bb5bda0858e, type: 2}
+  - {fileID: 11400000, guid: fdbf1a8f7df2e564c9bf169e879bc144, type: 2}
+  - {fileID: 11400000, guid: d2fbf50cadab6c2439900ad072f0b343, type: 2}
+  - {fileID: 11400000, guid: 97b298c01bae7b64eb9df00c648c03a4, type: 2}
+  - {fileID: 11400000, guid: 608d08c2bf2c5b842861d69c9e8d5011, type: 2}
+  - {fileID: 11400000, guid: d7ecc648b244f8141adacd103d7da032, type: 2}
+  - {fileID: 11400000, guid: fd97ac24042c5c64d993380f1809184b, type: 2}
+  - {fileID: 11400000, guid: 69c431b6c1c65ac48bc17ce643fb911d, type: 2}
+  - {fileID: 11400000, guid: 5ce9a2f5a410aec4abc660b4d5eea14d, type: 2}
+  - {fileID: 11400000, guid: 112aeb349857d3d40b66e9793e63020a, type: 2}
+  - {fileID: 11400000, guid: 107eafe51351643408d63cf1db2d7caf, type: 2}
+  - {fileID: 11400000, guid: 31b6fb719088ace448575d5d1a8b1917, type: 2}
+  - {fileID: 11400000, guid: 043b96cd0fe1e064495b0249965eea46, type: 2}
   MaxProductCount: 10
   coupon_gain_probability: 0.5
   coupons:

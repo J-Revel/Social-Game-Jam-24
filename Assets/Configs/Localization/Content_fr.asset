@@ -327,6 +327,10 @@ MonoBehaviour:
       prochaine on ne te refuse pas aux Restos du Coeur."
     m_Metadata:
       m_Items: []
+  - m_Id: 936686438563840
+    m_Localized: "D\xE9sol\xE9 madame, nous ne pouvons vous accueillir."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

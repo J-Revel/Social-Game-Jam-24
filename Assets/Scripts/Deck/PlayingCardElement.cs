@@ -25,9 +25,8 @@ public class PlayingCardElement : MonoBehaviour, IPointerEnterHandler, IPointerE
     {
         rect_transform = GetComponent<RectTransform>();
         button = GetComponent<Button>();
-        background_image.sprite = config.image;
         outline_image.enabled = false;
-        reduction_text.text = Mathf.RoundToInt(100 * config.price_multiplier).ToString();
+        reduction_text.text = "-" + Mathf.RoundToInt(100 * (1-config.price_multiplier)).ToString() + "%";
     }
 
     public void OnPointerEnter(PointerEventData eventData)

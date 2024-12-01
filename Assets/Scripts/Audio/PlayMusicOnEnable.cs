@@ -10,8 +10,8 @@ public class PlayMusicOnEnable : MonoBehaviour
     }
     private void OnDestroy()
     {
-        
-        MusicManager.instance.PlayMusic(leave_music);
+        if(MusicManager.instance != null)
+            MusicManager.instance.PlayMusic(leave_music);
     }
 
     void Update()

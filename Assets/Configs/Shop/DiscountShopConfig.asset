@@ -19,6 +19,18 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0f2864093cfcb584691d5fcae50e0da4, type: 2}
   - {fileID: 11400000, guid: f1f6bed24a9433e44bcb737db1a16c5b, type: 2}
   - {fileID: 11400000, guid: 18bb453a3d85b264ebfa6971214eb613, type: 2}
+  - {fileID: 11400000, guid: 0e18f755ffb4a9749a6f10661f54e505, type: 2}
+  - {fileID: 11400000, guid: 7dc98acb6f4850c46b5c0930beedd715, type: 2}
+  - {fileID: 11400000, guid: 16b28b6322eb35e459f361cb88d29820, type: 2}
+  - {fileID: 11400000, guid: 45520d5e942bfa94088b899e6027f381, type: 2}
+  - {fileID: 11400000, guid: 4e2e80c2e8508a64aa3e5009ae3941da, type: 2}
+  - {fileID: 11400000, guid: 1416e7379a372c748b30ad266a788cc9, type: 2}
+  - {fileID: 11400000, guid: ca8a01460c4bd27478552862d06571b9, type: 2}
+  - {fileID: 11400000, guid: c6ac7c09f4665334984be7de7346906e, type: 2}
+  - {fileID: 11400000, guid: 24dd8ed20db9c3041844f9b2afe2c676, type: 2}
+  - {fileID: 11400000, guid: f14a30d55ead5884e95f85c2766d6ab5, type: 2}
+  - {fileID: 11400000, guid: 9e738f463655f404a8556a7122b12e07, type: 2}
+  - {fileID: 11400000, guid: 4db5ce14dc337d744a624bd823773b10, type: 2}
   MaxProductCount: 1
   coupon_gain_probability: 0.5
   coupons:

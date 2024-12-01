@@ -270,16 +270,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deck:
-  - {fileID: 11400000, guid: c381c145f7af264449c0f363eaa1803d, type: 2}
-  - {fileID: 11400000, guid: c381c145f7af264449c0f363eaa1803d, type: 2}
-  - {fileID: 11400000, guid: c381c145f7af264449c0f363eaa1803d, type: 2}
-  - {fileID: 11400000, guid: 148811c7cd3852948abafc1f87d6275a, type: 2}
-  - {fileID: 11400000, guid: c381c145f7af264449c0f363eaa1803d, type: 2}
-  - {fileID: 11400000, guid: c381c145f7af264449c0f363eaa1803d, type: 2}
-  - {fileID: 11400000, guid: c381c145f7af264449c0f363eaa1803d, type: 2}
-  - {fileID: 11400000, guid: 148811c7cd3852948abafc1f87d6275a, type: 2}
-  - {fileID: 11400000, guid: c381c145f7af264449c0f363eaa1803d, type: 2}
-  - {fileID: 11400000, guid: c381c145f7af264449c0f363eaa1803d, type: 2}
+  - {fileID: 11400000, guid: a3556f6f621a4fd4ab57a344252a6036, type: 2}
+  - {fileID: 11400000, guid: d5a362d1157413640b7ed31cfd380409, type: 2}
+  - {fileID: 11400000, guid: 8bd1f3de0a8386346b79b915870a84c1, type: 2}
   default_spacing: 40
   hover_spacing: 250
   hovered_card_anim_cursor: 0
