@@ -239,6 +239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameState: 3
+  baseLevelData: {fileID: 11400000, guid: 82a2316eb426212419ea4c6412dccda6, type: 2}
   levelPrefab: {fileID: 7181982877776983689, guid: 4656ac975f2c4f54b9da5ae91977d03e, type: 3}
 --- !u!4 &1234455790
 Transform:

@@ -10,6 +10,13 @@ public class WeeklyEventConfig : ScriptableObject
     public LocalizedString SuccessLocKey;
     public LocalizedString FailedLocKey;
     public PedagogicTextCouple[] PedagogicTexts;
+
+    [Header("Modifiers")]
+    public int MoneyModifier = 0;
+    public bool HelpAvaillable = false;
+    public int StartingCouponsModifier = 0;
+    public int HelpProductCountModifier = 0;
+    public int MealNeededModifier = 0;
 }
 
 [Serializable]

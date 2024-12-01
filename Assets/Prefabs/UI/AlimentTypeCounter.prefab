@@ -128,6 +128,8 @@ MonoBehaviour:
   animationConfig: {fileID: 11400000, guid: e767bcaec4f8be049bb168d5c478b200, type: 2}
   icon: {fileID: 6270090106710620525}
   counterTMPComponent: {fileID: 3883947406875542680}
+  ratio: 1
+  format: 0
 --- !u!1 &1458823565861037548
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,19 +16,18 @@ public class MoneyBag : MonoBehaviour
     {
         dataDictionnary[MoneyType.Money].Amount -= data.PriceCost;
         //TODO QueueAnimation
-        dataDictionnary[MoneyType.Money].Counter.Set(dataDictionnary[MoneyType.Money].Amount);
+        dataDictionnary[MoneyType.Money].Counter.Set(dataDictionnary[MoneyType.Money].Amount, animated: true);
         dataDictionnary[MoneyType.Time].Amount -= data.TimeCost;
         //TODO QueueAnimation
-        dataDictionnary[MoneyType.Time].Counter.Set(dataDictionnary[MoneyType.Time].Amount);
+        dataDictionnary[MoneyType.Time].Counter.Set(dataDictionnary[MoneyType.Time].Amount, animated: true);
     }
 
-    private void Start()
+    public void Init(int time, int money)
     {
-        //Set value in counter
-        foreach(MoneyType moneyType in dataDictionnary.Keys)
-        {
-            dataDictionnary[moneyType].Counter.Set(dataDictionnary[moneyType].Amount);
-        }
+        dataDictionnary[MoneyType.Money].Amount = money;
+        dataDictionnary[MoneyType.Money].Counter.Set(money);
+        dataDictionnary[MoneyType.Time].Amount = time;
+        dataDictionnary[MoneyType.Time].Counter.Set(time);
     }
 }
 

@@ -8,10 +8,12 @@ public class IconCounter : MonoBehaviour
     [SerializeField] AnimationConfig animationConfig;
     [SerializeField] Image icon;
     [SerializeField] TextMeshProUGUI counterTMPComponent;
+    [SerializeField] float ratio = 1;
+    [SerializeField] string format = "0";
     public void Set(int count, bool animated = false)
     {
         this.StopAllCoroutines();
-        counterTMPComponent.text = count.ToString();
+        counterTMPComponent.text = ((float)count * ratio).ToString(format);
 
         if(animated)
         {
