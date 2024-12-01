@@ -65,24 +65,6 @@ public class PlayPart : GamePart
                 int productPickIndex = Random.Range(0, unused_products.Count);
                 ProductConfig product = unused_products[productPickIndex];
                 unused_products.RemoveAt(productPickIndex);
-                /*
-                float promo_random_value = Random.Range(0, 1.0f);
-                float promo_weight_sum = 0;
-                for(int j=0; j<product.promos.Length; j++)
-                {
-                    promo_weight_sum += product.promos[j].probability_weight;
-                }
-                int promo_index = 0;
-                for(int j=0; j<product.promos.Length; j++)
-                {
-                    promo_random_value -= product.promos[j].probability_weight / promo_weight_sum;
-                    if (promo_random_value < 0.0f)
-                    {
-                        promo_index = j;
-                        break;
-                    }
-                }
-                */
                 newShopContent[i].Products[p] = product;
             }
         }
