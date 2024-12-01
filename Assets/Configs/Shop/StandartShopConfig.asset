@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cc907d17882521043a16e8acecb6650f, type: 3}
-  m_Name: ClassicShopConfig
+  m_Name: StandartShopConfig
   m_EditorClassIdentifier: 
   AvailableProducts:
   - {fileID: 11400000, guid: f2b3dc23f3d752649b001232478828ce, type: 2}

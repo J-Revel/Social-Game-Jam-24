@@ -9,12 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 017b5736731e58e408c6bca470519158, type: 3}
-  m_Name: RegimeEvent
+  m_Script: {fileID: 11500000, guid: 2cf6ce87a6c021d4d9ee530ad13b7a9f, type: 3}
+  m_Name: ScoreConfig
   m_EditorClassIdentifier: 
-  TitleKey: 
-  DescriptionKey: 
-  SuccessKey: 
-  FailedKey: 
-  FactKey: 
-  CitationKey: 
+  goodMealMultiplier: 5
+  badMealMultiplier: 2
+  snackMultiplier: 1
+  targetMealCount: 21

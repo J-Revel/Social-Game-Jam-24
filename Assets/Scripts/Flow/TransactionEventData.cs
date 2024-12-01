@@ -1,6 +1,3 @@
-using System.Collections.Generic;
-using UnityEngine;
-
 public struct TransactionEventData
 {
     public ProductConfig Product;

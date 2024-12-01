@@ -12,9 +12,79 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 017b5736731e58e408c6bca470519158, type: 3}
   m_Name: PromoEvent
   m_EditorClassIdentifier: 
-  TitleKey: 
-  DescriptionKey: 
-  SuccessKey: 
-  FailedKey: 
-  FactKey: 
-  CitationKey: 
+  TitleLocKey:
+    m_TableReference:
+      m_TableCollectionName: GUID:1d011cddc3a5bad43bc1a07500b3e547
+    m_TableEntryReference:
+      m_KeyId: 702276111941632
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  DescriptionLocKey:
+    m_TableReference:
+      m_TableCollectionName: GUID:1d011cddc3a5bad43bc1a07500b3e547
+    m_TableEntryReference:
+      m_KeyId: 702276166467584
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  SuccessLocKey:
+    m_TableReference:
+      m_TableCollectionName: GUID:1d011cddc3a5bad43bc1a07500b3e547
+    m_TableEntryReference:
+      m_KeyId: 702276166467584
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  FailedLocKey:
+    m_TableReference:
+      m_TableCollectionName: GUID:1d011cddc3a5bad43bc1a07500b3e547
+    m_TableEntryReference:
+      m_KeyId: 702276166467584
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  PedagogicTexts:
+  - FactLocKey:
+      m_TableReference:
+        m_TableCollectionName: GUID:1d011cddc3a5bad43bc1a07500b3e547
+      m_TableEntryReference:
+        m_KeyId: 702276166467585
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    CitationLocKey:
+      m_TableReference:
+        m_TableCollectionName: GUID:1d011cddc3a5bad43bc1a07500b3e547
+      m_TableEntryReference:
+        m_KeyId: 702276174856193
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+  - FactLocKey:
+      m_TableReference:
+        m_TableCollectionName: GUID:1d011cddc3a5bad43bc1a07500b3e547
+      m_TableEntryReference:
+        m_KeyId: 702276174856192
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    CitationLocKey:
+      m_TableReference:
+        m_TableCollectionName: GUID:1d011cddc3a5bad43bc1a07500b3e547
+      m_TableEntryReference:
+        m_KeyId: 702276174856194
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []

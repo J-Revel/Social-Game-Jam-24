@@ -3,17 +3,17 @@ public enum AlimentType
     /// <summary>
     /// Rice, Potatoes...
     /// </summary>
-    Starch,
+    Starch = 2,
     /// <summary>
     /// Tomatoes, Pumpkin...
     /// </summary>
-    Vegetable,
+    Vegetable = 1,
     /// <summary>
     /// Chicken, beef... 
     /// </summary>
-    Protein,
+    Protein = 0,
     /// <summary>
     /// Lolipops, Chips...
     /// </summary>
-    Snacks,
+    Snacks = 3,
 }

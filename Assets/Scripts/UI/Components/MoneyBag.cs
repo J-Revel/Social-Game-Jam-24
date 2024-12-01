@@ -12,14 +12,23 @@ public class MoneyBag : MonoBehaviour
     {
         dataDictionnary = _dataDictionnary.ToDictionary(data => data.Type, data => data);
     }
-    public int Money;
-    public int Time;
     public void PayForTransaction(TransactionEventData data)
     {
-        Money -= data.PriceCost;
-        //QueueAnimation(alimentDescription);
-        Time -= data.TimeCost;
-        //QueueAnimation(alimentDescription);
+        dataDictionnary[MoneyType.Money].Amount -= data.PriceCost;
+        //TODO QueueAnimation
+        dataDictionnary[MoneyType.Money].Counter.Set(dataDictionnary[MoneyType.Money].Amount);
+        dataDictionnary[MoneyType.Time].Amount -= data.TimeCost;
+        //TODO QueueAnimation
+        dataDictionnary[MoneyType.Time].Counter.Set(dataDictionnary[MoneyType.Time].Amount);
+    }
+
+    private void Start()
+    {
+        //Set value in counter
+        foreach(MoneyType moneyType in dataDictionnary.Keys)
+        {
+            dataDictionnary[moneyType].Counter.Set(dataDictionnary[moneyType].Amount);
+        }
     }
 }
 

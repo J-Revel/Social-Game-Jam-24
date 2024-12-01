@@ -38,6 +38,6 @@ public class ShopBuyPopup : MonoBehaviour
     void Update()
     {
         price_display.text = (price / 100).ToString() + "," + (price % 100).ToString("00");
-        confirm_button.interactable = price <= TransactionManager.singleton.moneyBag.Money;
+        confirm_button.interactable = price <= TransactionManager.singleton.moneyBag.Get(MoneyType.Money);
     }
 }
