@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 017b5736731e58e408c6bca470519158, type: 3}
-  m_Name: BudgetEvent
+  m_Name: PromoFridayEvent
   m_EditorClassIdentifier: 
   TitleLocKey:
     m_TableReference:
       m_TableCollectionName: GUID:1d011cddc3a5bad43bc1a07500b3e547
     m_TableEntryReference:
-      m_KeyId: 702276174856195
+      m_KeyId: 702276174856201
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -25,7 +25,7 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:1d011cddc3a5bad43bc1a07500b3e547
     m_TableEntryReference:
-      m_KeyId: 702276174856196
+      m_KeyId: 702276174856202
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -34,7 +34,7 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:1d011cddc3a5bad43bc1a07500b3e547
     m_TableEntryReference:
-      m_KeyId: 931747305865217
+      m_KeyId: 931747305865219
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -43,7 +43,7 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:1d011cddc3a5bad43bc1a07500b3e547
     m_TableEntryReference:
-      m_KeyId: 931747305865218
+      m_KeyId: 931747305865222
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -53,7 +53,7 @@ MonoBehaviour:
       m_TableReference:
         m_TableCollectionName: GUID:1d011cddc3a5bad43bc1a07500b3e547
       m_TableEntryReference:
-        m_KeyId: 702276174856197
+        m_KeyId: 702276174856203
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -62,7 +62,7 @@ MonoBehaviour:
       m_TableReference:
         m_TableCollectionName: GUID:1d011cddc3a5bad43bc1a07500b3e547
       m_TableEntryReference:
-        m_KeyId: 702276174856199
+        m_KeyId: 702276174856205
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -71,7 +71,7 @@ MonoBehaviour:
       m_TableReference:
         m_TableCollectionName: GUID:1d011cddc3a5bad43bc1a07500b3e547
       m_TableEntryReference:
-        m_KeyId: 702276174856198
+        m_KeyId: 702276174856204
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
@@ -80,14 +80,14 @@ MonoBehaviour:
       m_TableReference:
         m_TableCollectionName: GUID:1d011cddc3a5bad43bc1a07500b3e547
       m_TableEntryReference:
-        m_KeyId: 702276174856200
+        m_KeyId: 702276174856206
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-  MoneyModifier: -1000
+  MoneyModifier: 0
   HelpAvaillable: 1
-  StartingCouponsModifier: 0
+  StartingCouponsModifier: 5
   HelpProductCountModifier: 0
   MealNeededModifier: 0
   references:
