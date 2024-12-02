@@ -1408,7 +1408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fillingRectTransform: {fileID: 7010304618095536037}
-  Value: 0.4
+  Value: 0
 --- !u!1 &6429252790376928980
 GameObject:
   m_ObjectHideFlags: 0
@@ -3359,7 +3359,7 @@ RectTransform:
   m_Father: {fileID: 3512246972346397712}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.65, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
