@@ -24,8 +24,9 @@ public class MapManager : MonoBehaviour
         if(IsEndGamePanelOpen()) CloseEndGamePanel();
         // Activate next shop
         currentShopIndex = shopIndex;
-        displayed_shop = Instantiate(shop_prefab, shop_menu_container);
-        displayed_shop.products = Global.CurrentShopList[currentShopIndex];
+        ShopContentData contentData = Global.CurrentShopList[currentShopIndex];;
+        displayed_shop = Instantiate(contentData.config.shopPrefab, shop_menu_container);
+        displayed_shop.products = contentData;
         HelpManager.OnShopOpen(shopIndex);
     }
 

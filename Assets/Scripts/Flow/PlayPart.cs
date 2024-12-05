@@ -57,17 +57,15 @@ public class PlayPart : GamePart
         {
             ShopConfig shopConfig = Global.ShopConfigs[i];
             newShopContent[i] = new ShopContentData();
-            newShopContent[i].Products = new ProductConfig[Mathf.Min(shopConfig.MaxProductCount, shopConfig.AvailableProducts.Length)];
-            newShopContent[i].coupons = shopConfig.coupons;
-            newShopContent[i].background_sprite = shopConfig.background_sprite;
-            newShopContent[i].coupon_gain_probability = shopConfig.coupon_gain_probability;
+            newShopContent[i].Products = new();
+            newShopContent[i].config = shopConfig;
             List<ProductConfig> unused_products = new List<ProductConfig>(shopConfig.AvailableProducts);
             for (int p = 0; p < shopConfig.MaxProductCount && unused_products.Count > 0; p++)
             {
                 int productPickIndex = Random.Range(0, unused_products.Count);
                 ProductConfig product = unused_products[productPickIndex];
                 unused_products.RemoveAt(productPickIndex);
-                newShopContent[i].Products[p] = product;
+                newShopContent[i].Products.Add(product);
             }
         }
 

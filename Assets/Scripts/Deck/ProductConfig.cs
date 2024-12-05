@@ -11,4 +11,5 @@ public class ProductConfig : ScriptableObject
     public Sprite icon;
     public ProductTag[] tags;
     public AlimentDescription[] aliments;
+    public int timeCost = 1;
 }

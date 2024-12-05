@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc907d17882521043a16e8acecb6650f, type: 3}
   m_Name: DiscountShopConfig
   m_EditorClassIdentifier: 
+  shopPrefab: {fileID: 8655415230438327303, guid: cc44228cb0d4c524a9adde2e432606e6, type: 3}
   background_sprite: {fileID: 21300000, guid: 72b0db8a981008545971b95c18616568, type: 3}
   AvailableProducts:
   - {fileID: 11400000, guid: f2b3dc23f3d752649b001232478828ce, type: 2}
@@ -33,6 +34,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9e738f463655f404a8556a7122b12e07, type: 2}
   - {fileID: 11400000, guid: 4db5ce14dc337d744a624bd823773b10, type: 2}
   MaxProductCount: 10
+  CanBuyOnlyOnce: 0
   coupon_gain_probability: 0.5
   coupons:
   - {fileID: 11400000, guid: 5301b18bf94095f419d1d450e67489db, type: 2}

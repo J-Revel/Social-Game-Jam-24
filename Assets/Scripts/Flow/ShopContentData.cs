@@ -21,10 +21,9 @@ public class ShopContentElement
     public ProductConfig product;
     public PromoConfig promo;
 }
+
 public class ShopContentData
 {
-    public Sprite background_sprite;
-    public ProductConfig[] Products;
-    public float coupon_gain_probability = 0.5f;
-    public PlayingCardConfig[] coupons;
+    public ShopConfig config;
+    public List<ProductConfig> Products;
 }

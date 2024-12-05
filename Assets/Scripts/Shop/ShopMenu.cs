@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,19 +14,25 @@ public class ShopMenu : MonoBehaviour
 
     void Start()
     {
-        background_image.sprite = products.background_sprite;
-        for(int i=0; i<products.Products.Length; i++)
+        background_image.sprite = products.config.background_sprite;
+        for(int i=0; i<products.Products.Count; i++)
         {
+            ProductConfig productConfig = products.Products[i];
             ShopBuyButton button = Instantiate(buy_button_prefab, product_container);
-            button.GetComponent<ProductDisplay>().product_config = products.Products[i];
+            button.GetComponent<ProductDisplay>().product_config = productConfig;
             button.transaction_delegate += (transaction) =>
             {
                 TransactionManager.RegisterTransaction(transaction);
-                if (Random.Range(0, 1.0f) < products.coupon_gain_probability)
+                if (Random.Range(0, 1.0f) < products.config.coupon_gain_probability)
                 {
                     CardBonusPopup card_bonus = Instantiate(card_bonus_popup, transform);
-                    card_bonus.card_received = products.coupons[Random.Range(0, products.coupons.Length)];
+                    card_bonus.card_received = products.config.coupons[Random.Range(0, products.config.coupons.Length)];
                     card_bonus.deck_panel = deck_panel;
+                }
+                if (products.config.CanBuyOnlyOnce)
+                {
+                    products.Products.Remove(productConfig);
+                    Destroy(button.gameObject);
                 }
             };
             button.deckPanel = deck_panel;

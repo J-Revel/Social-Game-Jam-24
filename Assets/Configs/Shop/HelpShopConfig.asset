@@ -12,14 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc907d17882521043a16e8acecb6650f, type: 3}
   m_Name: HelpShopConfig
   m_EditorClassIdentifier: 
+  shopPrefab: {fileID: 7572278343894765156, guid: d0070edb03e1cf94c8d633dd01a2544d, type: 3}
+  background_sprite: {fileID: 21300000, guid: a2eb9b1f69151ce45ad345034f55afd4, type: 3}
   AvailableProducts:
-  - {fileID: 11400000, guid: f2b3dc23f3d752649b001232478828ce, type: 2}
-  - {fileID: 11400000, guid: e8f847b82d79a7d458106a9970265fec, type: 2}
-  - {fileID: 11400000, guid: 47977458a1ee0eb418e51e490b66d43e, type: 2}
-  - {fileID: 11400000, guid: 0f2864093cfcb584691d5fcae50e0da4, type: 2}
-  - {fileID: 11400000, guid: f1f6bed24a9433e44bcb737db1a16c5b, type: 2}
-  - {fileID: 11400000, guid: 18bb453a3d85b264ebfa6971214eb613, type: 2}
-  MaxProductCount: 8
-  coupon_gain_probability: 0.5
-  coupons:
-  - {fileID: 11400000, guid: c381c145f7af264449c0f363eaa1803d, type: 2}
+  - {fileID: 11400000, guid: 18aa7dd7352363e4f982299c1caa171d, type: 2}
+  - {fileID: 11400000, guid: a02475955e269e24683c8276a2ef6c25, type: 2}
+  - {fileID: 11400000, guid: 4b61c9d4180985a418792e07c11c025e, type: 2}
+  - {fileID: 11400000, guid: 03aa4aa46411bb44f856634484965620, type: 2}
+  - {fileID: 11400000, guid: 99d6e9d4c6c7efb4dace187cc3e3a591, type: 2}
+  - {fileID: 11400000, guid: 68cc522411acdc145b63c5778a2e9903, type: 2}
+  MaxProductCount: 3
+  CanBuyOnlyOnce: 1
+  coupon_gain_probability: 0
+  coupons: []
