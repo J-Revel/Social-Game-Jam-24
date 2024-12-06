@@ -16,15 +16,17 @@ public class ShopBuyPopup : MonoBehaviour
             
     void Start()
     {
+        deckPanel = DeckPanel.singleton;
         product_display = GetComponent<ProductDisplay>();
         confirm_button.onClick.AddListener(() =>
         {
+            int paidPrice = price; // Cache it before cleanin selected_card;
             popup_close_delegate?.Invoke();
             Destroy(gameObject);
             deckPanel.ConsumeSelectedCards();
             buy_delegate?.Invoke(new TransactionEventData
             {
-                PriceCost = price,
+                PriceCost = paidPrice,
                 Product = product_display.product_config,
                 TimeCost = product_display.product_config.timeCost,
             });

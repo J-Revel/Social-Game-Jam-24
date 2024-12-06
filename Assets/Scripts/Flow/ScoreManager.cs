@@ -59,6 +59,7 @@ public class ScoreManager : MonoBehaviour
     public static void Init(int mealTarget)
     {
         singleton.currentMealTarget = mealTarget;
+        singleton.ComputeScore();
     }
     private void Awake() {singleton = this;}
 }

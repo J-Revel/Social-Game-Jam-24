@@ -8,7 +8,6 @@ public class ShopMenu : MonoBehaviour
     public RectTransform product_container;
     public RectTransform popup_container;
     public ShopBuyButton buy_button_prefab;
-    public DeckPanel deck_panel;
     public CardBonusPopup card_bonus_popup;
     public Image background_image;
 
@@ -27,7 +26,6 @@ public class ShopMenu : MonoBehaviour
                 {
                     CardBonusPopup card_bonus = Instantiate(card_bonus_popup, transform);
                     card_bonus.card_received = products.config.coupons[Random.Range(0, products.config.coupons.Length)];
-                    card_bonus.deck_panel = deck_panel;
                 }
                 if (products.config.CanBuyOnlyOnce)
                 {
@@ -35,13 +33,7 @@ public class ShopMenu : MonoBehaviour
                     Destroy(button.gameObject);
                 }
             };
-            button.deckPanel = deck_panel;
             button.popup_container = popup_container;
         }
-    }
-
-    void Update()
-    {
-        
     }
 }

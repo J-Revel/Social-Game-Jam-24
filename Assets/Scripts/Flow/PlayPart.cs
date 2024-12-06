@@ -34,12 +34,12 @@ public class PlayPart : GamePart
 
         // Promo Modifier
         int basePromoCoupon = baseLevelData.StartingCouponsCount + Global.CurrentWeeklyEvent.StartingCouponsModifier;
+        DeckPanel.Init(basePromoCoupon);
         // TODO apply
 
         // HelpProductCount Modifier
         ShopConfig HelpShopConfig = Global.ShopConfigs[2];
         HelpShopConfig.MaxProductCount = baseLevelData.HelpProductCount + Global.CurrentWeeklyEvent.HelpProductCountModifier;
-        // TODO apply
 
         // Meal Modifier
         int mealNeededCount = baseLevelData.MealNeeded + Global.CurrentWeeklyEvent.MealNeededModifier;

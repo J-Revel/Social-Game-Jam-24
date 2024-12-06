@@ -1,11 +1,10 @@
-using JetBrains.Annotations;
-using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class DeckPanel : MonoBehaviour, IPointerExitHandler
 {
+    public static DeckPanel singleton;
     public PlayingCardConfig[] deck;
     private List<PlayingCardElement> playing_cards = new List<PlayingCardElement>();
     public float default_spacing = 40;
@@ -32,11 +31,17 @@ public class DeckPanel : MonoBehaviour, IPointerExitHandler
         public float appear_value;
     }
 
-    void Start()
+    public void Awake()
     {
-        int cursor = 0;
-        foreach (PlayingCardConfig deck_element in deck)
+        singleton = this;
+    }
+
+    public static void Init(int deckCount) => singleton._Init(deckCount);
+    public void _Init(int deckCount)
+    {
+        for (int i = 0; i < deckCount; i++)
         {
+            PlayingCardConfig deck_element = deck[i%deck.Length];
             AddCard(deck_element);
         }
     }
@@ -97,7 +102,8 @@ public class DeckPanel : MonoBehaviour, IPointerExitHandler
         }
     }
 
-    public void AddCard(PlayingCardConfig card)
+    public static void AddCard(PlayingCardConfig card) => singleton._AddCard(card);
+    private void _AddCard(PlayingCardConfig card)
     {
         PlayingCardElement playing_card = Instantiate(card.card_prefab, transform);
         playing_card.config = card;

@@ -13,6 +13,7 @@ public class ShopBuyButton : MonoBehaviour
     
     void Start()
     {
+        deckPanel = DeckPanel.singleton;
         product_display = GetComponent<ProductDisplay>();
         button = GetComponent<Button>();
 
@@ -28,12 +29,7 @@ public class ShopBuyButton : MonoBehaviour
             {
                 deckPanel.StopCardSelection();
             };
-            popup.deckPanel = deckPanel;
             popup.GetComponent<ProductDisplay>().product_config = product_display.product_config;
         });
-    }
-
-    void Update()
-    {
     }
 }

@@ -1,0 +1,112 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3040396449046657868
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7360246764930676043}
+  - component: {fileID: 2573481328960621174}
+  - component: {fileID: 4497287860885895909}
+  - component: {fileID: 8346263310839089601}
+  m_Layer: 5
+  m_Name: Deck Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &7360246764930676043
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3040396449046657868}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 243.6505}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &2573481328960621174
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3040396449046657868}
+  m_CullTransparentMesh: 1
+--- !u!114 &4497287860885895909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3040396449046657868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e483dd90439a60d47b9bd24c1875cebb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deck:
+  - {fileID: 11400000, guid: a3556f6f621a4fd4ab57a344252a6036, type: 2}
+  - {fileID: 11400000, guid: d5a362d1157413640b7ed31cfd380409, type: 2}
+  - {fileID: 11400000, guid: 8bd1f3de0a8386346b79b915870a84c1, type: 2}
+  - {fileID: 11400000, guid: b2aad7f64625aef4a94ff28e5e1c0f9f, type: 2}
+  - {fileID: 11400000, guid: 6b3184f60a2d4e940982903d232c741c, type: 2}
+  - {fileID: 11400000, guid: 5301b18bf94095f419d1d450e67489db, type: 2}
+  - {fileID: 11400000, guid: 7738b031d22a64b48be70c9d7c1c5965, type: 2}
+  - {fileID: 11400000, guid: 148811c7cd3852948abafc1f87d6275a, type: 2}
+  default_spacing: 40
+  hover_spacing: 250
+  hovered_card_anim_cursor: 0
+  hovered_card: 0
+  hovered_anim_duration: 0.3
+  hover_cursor_anim_speed: 3
+  fold_effect_duration: 0.3
+  fold_effect_time: 0
+  allow_selection: 0
+  selected_product_tags: []
+  hover_additional_offset: {x: 120, y: 120}
+  appear_speed: 3
+  appear_offset: {x: 100, y: -100}
+--- !u!114 &8346263310839089601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3040396449046657868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.011764706}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
