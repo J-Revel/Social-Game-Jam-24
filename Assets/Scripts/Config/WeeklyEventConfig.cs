@@ -1,14 +1,13 @@
 using System;
 using UnityEngine;
-using UnityEngine.Localization;
 
 [CreateAssetMenu(fileName = "WeeklyEventConfig", menuName = "Scriptable Objects/WeeklyEventConfig")]
 public class WeeklyEventConfig : ScriptableObject
 {
-    public LocalizedString TitleLocKey;
-    public LocalizedString DescriptionLocKey;
-    public LocalizedString SuccessLocKey;
-    public LocalizedString FailedLocKey;
+    [TextArea]public string TitleText;
+    [TextArea]public string DescriptionText;
+    [TextArea]public string SuccessText;
+    [TextArea]public string FailedText;
     public PedagogicTextCouple[] PedagogicTexts;
 
     [Header("Modifiers")]
@@ -22,6 +21,6 @@ public class WeeklyEventConfig : ScriptableObject
 [Serializable]
 public class PedagogicTextCouple
 {
-    public LocalizedString FactLocKey;
-    public LocalizedString CitationLocKey;
+    [TextArea] public string FactText;
+    [TextArea] public string CitationText;
 }

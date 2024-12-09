@@ -30,8 +30,8 @@ public class StartPanel : GamePart
     private void UpdateVisual()
     {
         var currentEvent = Global.CurrentWeeklyEvent;
-        titleText.text = currentEvent.TitleLocKey.GetLocalizedString();
-        descriptionText.text = currentEvent.DescriptionLocKey.GetLocalizedString();
+        titleText.text = currentEvent.TitleText;
+        descriptionText.text = currentEvent.DescriptionText;
     }
 
     public void Next()

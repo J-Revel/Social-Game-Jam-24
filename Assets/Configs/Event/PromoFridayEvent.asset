@@ -48,6 +48,13 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  TitleText: PromoFriday
+  DescriptionText: "Vos magasins pr\xE9f\xE9r\xE9s donne un coup de boost \xE0 votre
+    pouvoir d'achat. Profitez de prix ultracomp\xE9titifs sur toute une gamme de
+    produits pendant une semaine."
+  SuccessText: "F\xE9licitation, tu as pass\xE9 une semaine sans sauter aucun repas."
+  FailedText: "Tu as saut\xE9 {0} repas cette semaine. Tu esp\xE8res que tes voisins
+    crois\xE9s \xE0 la banque alimentaire auront eu plus de chance que toi."
   PedagogicTexts:
   - FactLocKey:
       m_TableReference:
@@ -67,6 +74,19 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    FactText: "Chaque passage en caisse invisibilise de nombreux co\xFBts cach\xE9s.
+      Derri\xE8re le prix pay\xE9 par le consommateur on trouve de l\u2019argent
+      public engag\xE9 pour la d\xE9pollution, la couverture des maladies professionnelles,
+      des maladies des consommateurs du fait d\u2019une alimentation trop grasse
+      et trop sucr\xE9e\u2026 Au total, on compense aujourd\u2019hui les dysfonctionnements
+      de notre syst\xE8me alimentaire, \xE0 hauteur de 19 milliards d\u2019euros
+      ! C\u2019est pratiquement le double du budget allou\xE9 pour la planification
+      \xE9cologique en 2024."
+    CitationText: "Selon une \xE9tude de septembre 2023, r\xE9alis\xE9e par le Centre
+      de recherche pour l\u2019\xE9tude et l\u2019observation des conditions de vie
+      (Cr\xE9doc), entre 35% et 49% des personnes en situation de pr\xE9carit\xE9
+      alimentaire ne se rendent dans aucun organisme de l'aide alimentaire par g\xEAne
+      ou par honte."
   - FactLocKey:
       m_TableReference:
         m_TableCollectionName: GUID:1d011cddc3a5bad43bc1a07500b3e547
@@ -85,6 +105,11 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    FactText: "Aujourd\u2019hui 11,7 milliards d'euros sont d\xE9pens\xE9s \xE0 minima
+      pour les maladies li\xE9es \xE0 notre mauvaise alimentation (ob\xE9sit\xE9
+      et diab\xE8te par exemple)."
+    CitationText: "\u201C\xC7a me [fait] peur de manger des produits chimiques et
+      des produits...\" (Participant.e \xE0 la Caisse Alimentaire Commune de Montpellier)"
   MoneyModifier: 0
   HelpAvaillable: 1
   StartingCouponsModifier: 5

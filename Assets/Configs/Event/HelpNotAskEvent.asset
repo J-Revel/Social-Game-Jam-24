@@ -48,6 +48,13 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  TitleText: "D\xE9sol\xE9 madame, nous ne pouvons vous accueillir."
+  DescriptionText: "Cela fait plusieurs fois apr\xE8s plus de deux heure pass\xE9es
+    dans la file d'attente, qu'il n'y a plus assez de denr\xE9es pour toi. "
+  SuccessText: "F\xE9licitation, tu as pass\xE9 une semaine sans sauter aucun repas,
+    et ce m\xEAme si l'aide alimentaire ne t'\xE9tais pas accessible."
+  FailedText: "Tu as saut\xE9 {0} repas cette semaine. Tu pris pour que la semaine
+    prochaine on ne te refuse pas aux Restos du Coeur."
   PedagogicTexts:
   - FactLocKey:
       m_TableReference:
@@ -67,6 +74,16 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    FactText: "En septembre 2023, le pr\xE9sident des Restos du Coeur, Patrice Douret
+      lance un cri d'alerte : submerg\xE9s, les Restos du Coeur sont contraints,
+      pour la premi\xE8re fois, de refuser des b\xE9n\xE9ficiaires, et risquent de
+      mettre la cl\xE9 sous la porte."
+    CitationText: "\"Globalement, les familles qui ont des revenus au-dessus du RSA
+      sont automatiquement refus\xE9es. J'ai d\xE9j\xE0 d\xFB refuser 25 familles
+      depuis le 15 octobre. \xC7a fait du mal aux b\xE9n\xE9voles et \xE7a fait du
+      mal aux b\xE9n\xE9ficiaires ( .. ) c'est pour moi, une \xE9volution contraire
+      \xE0 ce que voulait Coluche\" (T\xE9moignage du responsable des Restos du Coeur
+      de Bagneux, sur France 3, le 22 nov 2023)"
   MoneyModifier: 0
   HelpAvaillable: 0
   StartingCouponsModifier: 0

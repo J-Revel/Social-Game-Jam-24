@@ -48,6 +48,14 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  TitleText: "Les co\xFBts de l'\xE9nergie s'envolent !"
+  DescriptionText: "Tu as vu le documentaire sur l'Ukraine dimanche dernier, mais
+    tu ne t'attendais pas \xE0 ce que ta facture d'\xE9lectricit\xE9 s'envole \xE0
+    ce point !"
+  SuccessText: "F\xE9licitation, malgr\xE9 des factures qui ont augment\xE9es, tu
+    as pass\xE9 une semaine sans sauter aucun repas."
+  FailedText: "Tu as saut\xE9 {0} repas cette semaine, mais tu as r\xE9ussi \xE0
+    payer toutes tes factures d'\xE9nergie ce mois."
   PedagogicTexts:
   - FactLocKey:
       m_TableReference:
@@ -67,6 +75,15 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    FactText: "La pr\xE9carit\xE9 alimentaire se caract\xE9rise par des difficult\xE9s,
+      notamment \xE9conomiques, \xE0 acc\xE9der \xE0 une alimentation en quantit\xE9
+      et en qualit\xE9 suffisante. Elle est l\u2019une des facettes d\u2019une pr\xE9carit\xE9
+      plus globale (logement, \xE9nergie, emploi\u2026) qui g\xE9n\xE8re exclusion
+      et disqualification sociales (Paugam, 1991) pour les personnes concern\xE9es."
+    CitationText: "\"Je mange toujours froids pour \xE9viter de r\xE9chauffer les
+      aliments [...] Je me fais une tisane \xE0 chaque repas, comme \xE7a je n'ai
+      pas mal au ventre et j'ai une sensation de chaleur dans la bouche\" (Mediapart,
+      Fa\xEFza Zerouala, mars 2023)"
   - FactLocKey:
       m_TableReference:
         m_TableCollectionName: GUID:1d011cddc3a5bad43bc1a07500b3e547
@@ -85,6 +102,16 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    FactText: "L'alimentation est la variable d'ajustement du budget du m\xE9nage.
+      Le budget alimentaire passe seulement apr\xE8s les d\xE9penses incompressibles
+      comme le loyer, l'\xE9nergie, les transports, les cr\xE9dits, les assurances
+      et autres charges..."
+    CitationText: "\u201CLe plus important c'est de trouver quoi ramener aux enfants.
+      Je m'en fous si je vais consacrer toute une journ\xE9e pour aller faire les
+      courses. Le plus important, que je reviendrai avec un panier plein pour mes
+      enfants. Je crois que j'essaye de planifier mes journ\xE9es en fonction de
+      \xE7a : comment je dois faire pour nourrir des bouches que j'ai \xE0 la maison
+      ?\u201D (Participant.e \xE0 la Caisse Alimentaire Commune de Montpellier)"
   MoneyModifier: -1000
   HelpAvaillable: 1
   StartingCouponsModifier: 0

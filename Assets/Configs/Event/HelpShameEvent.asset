@@ -48,6 +48,13 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  TitleText: Moi vivant, demander de l'aide... Jamais !
+  DescriptionText: "Malgr\xE9 les difficult\xE9s \xE0 boucler les fins de mois, tu
+    t'es jur\xE9 de ne jamais mettre les pieds au Resto du Coeur. Ce n'est et ce
+    ne sera jamais pour toi."
+  SuccessText: "F\xE9licitation, tu as pass\xE9 une semaine sans sauter aucun repas.
+    Et ce sans l'aide de personne."
+  FailedText: "Tu as saut\xE9 {0} repas cette semaine."
   PedagogicTexts:
   - FactLocKey:
       m_TableReference:
@@ -67,6 +74,16 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    FactText: "Selon une \xE9tude de septembre 2023, r\xE9alis\xE9e par le Centre
+      de recherche pour l\u2019\xE9tude et l\u2019observation des conditions de vie
+      (Cr\xE9doc), entre 35% et 49% des personnes en situation de pr\xE9carit\xE9
+      alimentaire ne se rendent dans aucun organisme de l'aide alimentaire par g\xEAne
+      ou par honte."
+    CitationText: "\"Je ne suis jamais all\xE9e aux restos du C\u0153ur, mais je
+      crois que je vais devoir y aller. J'ai un peu la honte. J'ai boss\xE9 pendant
+      quinze mois et l\xE0, je n'ai plus rien. Mon contrat s'est termin\xE9 en septembre
+      et ils n'ont pas voulu le renouveler\" (T\xE9moignage d'une auditrice sur France
+      Bleu P\xE9rigord, le 19 nov 2024)"
   MoneyModifier: 0
   HelpAvaillable: 0
   StartingCouponsModifier: 0

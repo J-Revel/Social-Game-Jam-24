@@ -48,6 +48,15 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  TitleText: "5\xE8me confinement suite \xE0 la pand\xE9mie"
+  DescriptionText: "D'interminables files d'attentes devant les locaux des lieux
+    d'aide alimentaires. La Croix rouge, Les Restos du Coeurs, L'Arm\xE9e du Salut...
+    tous se disent d\xE9pass\xE9s."
+  SuccessText: "F\xE9licitation, tu as pass\xE9 une semaine sans sauter aucun repas.
+    Tu as crois\xE9 tes voisins dans la file d'attente de la banque alimentaire,
+    eux n'ont pas eu cette chance,"
+  FailedText: "Tu as saut\xE9 {0} repas cette semaine. Tu esp\xE8res que tes voisins
+    crois\xE9s \xE0 la banque alimentaire auront eu plus de chance que toi."
   PedagogicTexts:
   - FactLocKey:
       m_TableReference:
@@ -67,6 +76,15 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    FactText: "2 \xE0 4 millions de personnes ont recours \xE0 l\u2019aide alimentaire.
+      Cette aide, si elle est aujourd\u2019hui n\xE9cessaire, est \xE9galement pourvoyeuse
+      de nombreuses violences : alimentation non choisie et souvent de mauvaise qualit\xE9,
+      stigmatisation..."
+    CitationText: "\"Oui mais c'est al\xE9atoire [\xE0 la banque alimentaire], c'est
+      chaque semaine, c'est diff\xE9rent. Je vais dire n'importe quoi l\xE0... cette
+      semaine ils ont re\xE7u du citron, l\xE0 2 semaines apr\xE8s on a plus de citron
+      vous voyez... c'est pas vraiment... on sait pas ce qu'on va avoir.\" (Participant.e
+      \xE0 la Caisse Alimentaire Commune de Montpellier)"
   - FactLocKey:
       m_TableReference:
         m_TableCollectionName: GUID:1d011cddc3a5bad43bc1a07500b3e547
@@ -85,6 +103,13 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    FactText: "Les banques alimentaires ont constat\xE9 un triplement du nombre de
+      b\xE9n\xE9ficiaires de l\u2019aide alimentaire entre 2011 et 2022, passant
+      d\u2019environ 800 000 \xE0 2,4 millions de personnes."
+    CitationText: "\"Prendre une pomme, \xE0 la personne \xE2g\xE9e je lui dit..
+      Ah non mais vous avez pas le droit, vous avez 1/2 point seulement.\" (Participant.e
+      \xE0 la Caisse Alimentaire Commune de Mointpellier et ancien.e b\xE9n\xE9vole
+      au Restos du Coeur)"
   MoneyModifier: 0
   HelpAvaillable: 1
   StartingCouponsModifier: 0

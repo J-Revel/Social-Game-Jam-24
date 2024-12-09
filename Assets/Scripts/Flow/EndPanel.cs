@@ -69,11 +69,11 @@ public class EndPanel : GamePart
         scoreResultLine.SetResult(result.Score);
 
         var currentEvent = Global.CurrentWeeklyEvent;
-        titleText.text = currentEvent.TitleLocKey.GetLocalizedString();
-        resultText.text = result.MissedMealCount <= 0 ? currentEvent.SuccessLocKey.GetLocalizedString() : String.Format(currentEvent.FailedLocKey.GetLocalizedString(), result.MissedMealCount);
+        titleText.text = currentEvent.TitleText;
+        resultText.text = result.MissedMealCount <= 0 ? currentEvent.SuccessText : String.Format(currentEvent.FailedText, result.MissedMealCount);
         PedagogicTextCouple pickedTextCouple = currentEvent.PedagogicTexts[UnityEngine.Random.Range(0, currentEvent.PedagogicTexts.Length)];
-        citationText.text = pickedTextCouple.CitationLocKey.GetLocalizedString();
-        factText.text = pickedTextCouple.FactLocKey.GetLocalizedString();
+        citationText.text = pickedTextCouple.CitationText;
+        factText.text = pickedTextCouple.FactText;
     }
 
     public void Next()

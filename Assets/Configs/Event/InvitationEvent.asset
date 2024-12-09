@@ -48,6 +48,13 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  TitleText: "Des ami.e.s \xE0 la maison"
+  DescriptionText: "Tes ami.e.s d'enfance t'ont invit\xE9 semaine derni\xE8re \xE0
+    un bon repas, tu aimerais leur rendre la pareil."
+  SuccessText: "F\xE9licitations tu as pass\xE9 une semaine sans sauter aucun repas,
+    et tu as pu profiter d'un bon repas entre ami.e.s."
+  FailedText: "Tu as saut\xE9 {0} repas cette semaine, et tu as pu profiter d'un
+    bon repas partag\xE9 entre ami.e.s."
   PedagogicTexts:
   - FactLocKey:
       m_TableReference:
@@ -67,6 +74,15 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    FactText: "La pr\xE9carit\xE9 alimentaire peut entra\xEEner un affaiblissement
+      des liens sociaux, que ce soit du r\xE9seau familial ou amical, et aboutir
+      \xE0 une situation d\u2019isolement social. Les sociabilit\xE9s alimentaires
+      : inviter chez soi, partager un repas, un go\xFBter, amener quelque chose,
+      sont au c\u0153ur des relations sociales."
+    CitationText: "\"Quand t'es abonn\xE9 au Lidl, c'est une esp\xE8ce de... Comment
+      dire ? D'oppression. T'es toujours dans les m\xEAmes go\xFBts, t'es format\xE9.
+      Quand t'as pas acc\xE8s \xE0 autre chose... Tu te sens vraiment en bas de classe,
+      quoi.\u201D (Participant.e \xE0 la Caisse Alimentaire Commune de Montpellier)"
   - FactLocKey:
       m_TableReference:
         m_TableCollectionName: GUID:1d011cddc3a5bad43bc1a07500b3e547
@@ -85,6 +101,15 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    FactText: "Dans certaines cultures, le sentiment de \xAB bien manger \xBB peut
+      \xEAtre li\xE9 au temps de repas partag\xE9 en famille ou entre amis (Fischler
+      et Masson, 2008). La commensalit\xE9, le fait de manger ensemble, en plus de
+      participer au bien \xEAtre social peut favoriser la r\xE9gulation des comportements
+      alimentaires et peut jouer un r\xF4le de pr\xE9vention contre l\u2019ob\xE9sit\xE9
+      et autres troubles de l\u2019alimentation (Fischler, 2012)."
+    CitationText: "\"J'avais arr\xEAt\xE9 parce que tu ne vas pas inviter les personnes
+      \xE0 manger rien du tout. En famille, entre amis aussi.\" (Participant.e \xE0
+      la Caisse Alimentaire Commune de Montpellier)"
   MoneyModifier: 0
   HelpAvaillable: 1
   StartingCouponsModifier: 0
