@@ -15,16 +15,21 @@ public class StartPanel : GamePart
 
     public override void StartPart()
     {
-        this.PickMission();
         UpdateVisual();
         this.gameObject.SetActive(true);
     }
 
-    private void PickMission()
+    private void PickRandomMission()
     {
         // Pick Next Event
         var potentialEvents = Global.WeeklyEventsConfig.AvaillableEvents.Where(e => e != Global.CurrentWeeklyEvent).ToArray();
         Global.CurrentWeeklyEvent = potentialEvents[UnityEngine.Random.Range(0, potentialEvents.Length)];
+    }
+    
+    private void PickMission(WeeklyEventConfig mission)
+    {
+        // Pick Next Event
+        Global.CurrentWeeklyEvent = mission;
     }
 
     private void UpdateVisual()

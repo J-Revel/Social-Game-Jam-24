@@ -16,6 +16,6 @@ public class IntroPart : GamePart
 
     public void Next()
     {
-        Global.GoToState(GameState.Presentation);
+        Global.GoToState(GameState.EventSelect);
     }  
 }

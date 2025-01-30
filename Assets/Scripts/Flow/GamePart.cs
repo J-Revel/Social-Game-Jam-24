@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public enum GameState {None, Intro, Presentation, Play, Conclusion};
+public enum GameState {None, Intro, Presentation, Play, Conclusion, EventSelect};
 public abstract class GamePart : MonoBehaviour
 {
     public GameState gameState;
